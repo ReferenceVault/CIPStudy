@@ -4,6 +4,8 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 
+import Image from 'next/image';
+
 import { Button } from "@/components/ui/button";
 
 import { Input } from "@/components/ui/input";
@@ -232,11 +234,15 @@ export default function HeroSection() {
 
               >
 
-                <img 
+                <Image 
 
                   src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=700&fit=crop"
 
                   alt="Students studying abroad"
+
+                  width={600}
+
+                  height={700}
 
                   className="w-full h-[500px] object-cover"
 

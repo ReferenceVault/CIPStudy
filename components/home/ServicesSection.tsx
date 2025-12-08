@@ -158,7 +158,7 @@ export default function ServicesSection() {
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
 
-            From the first consultation to your arrival at university, we're with you every step of the way.
+            From the first consultation to your arrival at university, we&apos;re with you every step of the way.
 
           </p>
 

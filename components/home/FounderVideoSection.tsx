@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Image from 'next/image';
+
 import { Button } from "@/components/ui/button";
 
 import { Play, X, Quote, Award, Users, Globe } from 'lucide-react';
@@ -54,11 +56,15 @@ export default function FounderVideoSection() {
 
                  onClick={() => setIsVideoOpen(true)}>
 
-              <img 
+              <Image 
 
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=500&fit=crop"
 
                 alt="Founder Video"
+
+                width={700}
+
+                height={500}
 
                 className="w-full h-[400px] lg:h-[500px] object-cover"
 
@@ -186,7 +192,7 @@ export default function FounderVideoSection() {
 
               <p className="text-xl text-slate-600 leading-relaxed italic">
 
-                "I started Study Global with a simple belief: every student deserves access to world-class education, regardless of where they come from. Our mission is to break down barriers and open doors to global opportunities."
+                &ldquo;I started Study Global with a simple belief: every student deserves access to world-class education, regardless of where they come from. Our mission is to break down barriers and open doors to global opportunities.&rdquo;
 
               </p>
 
@@ -198,11 +204,15 @@ export default function FounderVideoSection() {
 
             <div className="flex items-center gap-4 mb-8 p-4 bg-white rounded-2xl shadow-lg">
 
-              <img 
+              <Image 
 
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
 
                 alt="Dr. James Richardson"
+
+                width={64}
+
+                height={64}
 
                 className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
 

@@ -4,15 +4,28 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 
+import Image from 'next/image';
+
 import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 
 import { Calendar, ArrowRight, Clock, Tag } from 'lucide-react';
 
+type NewsCategory = "Visa Updates" | "Scholarships" | "Rankings" | "Company News";
 
+interface NewsItem {
+  id: number;
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  readTime: string;
+  category: NewsCategory;
+  featured?: boolean;
+}
 
-const newsItems = [
+const newsItems: NewsItem[] = [
 
   {
 
@@ -92,7 +105,7 @@ const newsItems = [
 
 
 
-const categoryColors = {
+const categoryColors: Record<NewsCategory, string> = {
 
   "Visa Updates": "bg-blue-100 text-blue-700",
 
@@ -200,19 +213,29 @@ export default function NewsSection() {
 
                   <div className="relative h-72 lg:h-80 overflow-hidden">
 
-                    <motion.img 
-
-                      src={featuredNews.image}
-
-                      alt={featuredNews.title}
-
-                      className="w-full h-full object-cover"
+                    <motion.div
 
                       whileHover={{ scale: 1.05 }}
 
                       transition={{ duration: 0.5 }}
 
-                    />
+                      className="w-full h-full"
+
+                    >
+
+                      <Image 
+
+                        src={featuredNews.image}
+
+                        alt={featuredNews.title}
+
+                        fill
+
+                        className="object-cover"
+
+                      />
+
+                    </motion.div>
 
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
 
@@ -340,21 +363,31 @@ export default function NewsSection() {
 
                     <div className="flex flex-col sm:flex-row">
 
-                      <div className="sm:w-40 h-40 sm:h-auto overflow-hidden flex-shrink-0">
+                      <div className="sm:w-40 h-40 sm:h-auto overflow-hidden flex-shrink-0 relative">
 
-                        <motion.img 
-
-                          src={news.image}
-
-                          alt={news.title}
-
-                          className="w-full h-full object-cover"
+                        <motion.div
 
                           whileHover={{ scale: 1.1 }}
 
                           transition={{ duration: 0.5 }}
 
-                        />
+                          className="w-full h-full"
+
+                        >
+
+                          <Image 
+
+                            src={news.image}
+
+                            alt={news.title}
+
+                            fill
+
+                            className="object-cover"
+
+                          />
+
+                        </motion.div>
 
                       </div>
 

@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-
-
 import { motion } from 'framer-motion';
+
+import Image from 'next/image';
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -156,19 +156,29 @@ export default function DestinationsSection() {
 
                   <div className="relative h-64 overflow-hidden">
 
-                    <motion.img 
-
-                      src={dest.image}
-
-                      alt={dest.country}
-
-                      className="w-full h-full object-cover"
+                    <motion.div
 
                       whileHover={{ scale: 1.1 }}
 
                       transition={{ duration: 0.6 }}
 
-                    />
+                      className="w-full h-full"
+
+                    >
+
+                      <Image 
+
+                        src={dest.image}
+
+                        alt={dest.country}
+
+                        fill
+
+                        className="object-cover"
+
+                      />
+
+                    </motion.div>
 
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
 
