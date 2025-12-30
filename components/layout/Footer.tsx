@@ -86,7 +86,7 @@ export default function Footer() {
 
             <p className="text-slate-400 mb-6 leading-relaxed">
 
-              Your trusted partner for international education. We've helped thousands of students achieve their dreams of studying abroad.
+              Your trusted partner for international education. We&apos;ve helped thousands of students achieve their dreams of studying abroad.
 
             </p>
 

@@ -6,6 +6,8 @@ import { motion, animate } from 'framer-motion';
 
 import { useEffect, useState } from 'react';
 
+import Image from 'next/image';
+
 
 
 const stats = [
@@ -70,13 +72,15 @@ export default function StatsSection() {
 
       <div className="absolute inset-0">
 
-        <img 
+        <Image 
 
           src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&h=800&fit=crop"
 
           alt="University campus"
 
-          className="w-full h-full object-cover"
+          fill
+
+          className="object-cover"
 
         />
 

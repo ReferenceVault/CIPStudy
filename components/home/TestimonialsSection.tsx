@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Image from 'next/image';
+
 import { Quote, Star, GraduationCap, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
@@ -290,11 +292,15 @@ export default function TestimonialsSection() {
 
                   >
 
-                    <img 
+                    <Image 
 
                       src={testimonial.image}
 
                       alt={testimonial.name}
+
+                      width={80}
+
+                      height={80}
 
                       className="w-full h-full object-cover"
 
@@ -402,11 +408,15 @@ export default function TestimonialsSection() {
 
                   <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-purple-200 mx-auto shadow-lg">
 
-                    <img 
+                    <Image 
 
                       src={testimonials[activeIndex].image}
 
                       alt={testimonials[activeIndex].name}
+
+                      width={96}
+
+                      height={96}
 
                       className="w-full h-full object-cover"
 
@@ -450,7 +460,7 @@ export default function TestimonialsSection() {
 
                 <p className="text-base lg:text-lg text-slate-700 leading-relaxed mb-5 italic">
 
-                  "{testimonials[activeIndex].quote}"
+                  &ldquo;{testimonials[activeIndex].quote}&rdquo;
 
                 </p>
 
