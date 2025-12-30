@@ -79,7 +79,7 @@ export default function HeroSection() {
       color: 'bg-gradient-to-br from-indigo-500 to-purple-500'
     },
     { 
-      tag: 'Video Training', 
+      tag: 'Mentorship', 
       icon: PlayCircle, 
       position: 'right-[calc(12%+20px)] top-[50%]', 
       delay: 1.2, 
