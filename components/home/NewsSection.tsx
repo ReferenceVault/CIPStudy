@@ -92,7 +92,7 @@ const newsItems = [
 
 
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
 
   "Visa Updates": "bg-blue-100 text-blue-700",
 

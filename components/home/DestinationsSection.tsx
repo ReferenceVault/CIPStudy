@@ -168,7 +168,7 @@ export default function DestinationsSection() {
               </span>
             </h2>
             <p className="text-xl text-purple-100">
-              Discover opportunities in the world's top study destinations. 
+              Discover opportunities in the world&apos;s top study destinations. 
               Find the perfect country and university for your academic goals.
             </p>
           </motion.div>

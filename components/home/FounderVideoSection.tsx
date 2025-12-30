@@ -186,7 +186,7 @@ export default function FounderVideoSection() {
 
               <p className="text-base text-slate-600 leading-relaxed italic">
 
-                "I started Study Global with a simple belief: every student deserves access to world-class education, regardless of where they come from. Our mission is to break down barriers and open doors to global opportunities."
+                &quot;I started Study Global with a simple belief: every student deserves access to world-class education, regardless of where they come from. Our mission is to break down barriers and open doors to global opportunities.&quot;
 
               </p>
 
