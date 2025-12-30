@@ -28,13 +28,13 @@ export default function PartnersSection() {
 
   return (
 
-    <section className="py-16 bg-slate-50 border-y border-slate-100">
+    <section className="py-[58px] bg-slate-50 border-y border-slate-100">
 
       <div className="container mx-auto px-6 lg:px-12">
 
         <motion.div 
 
-          className="text-center mb-10"
+          className="text-center mb-9"
 
           initial={{ opacity: 0 }}
 

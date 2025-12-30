@@ -18,7 +18,7 @@ export default function FounderVideoSection() {
 
   return (
 
-    <section className="py-24 bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
+    <section className="py-[86px] bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
 
       {/* Background Decorations */}
 
@@ -30,7 +30,7 @@ export default function FounderVideoSection() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-11 items-center">
 
           {/* Video Side */}
 
@@ -160,7 +160,7 @@ export default function FounderVideoSection() {
 
           >
 
-            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-3">
 
               Meet Our Founder
 
@@ -168,7 +168,7 @@ export default function FounderVideoSection() {
 
 
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">
 
               Driven by a 
 
@@ -180,11 +180,11 @@ export default function FounderVideoSection() {
 
 
 
-            <div className="mb-8">
+            <div className="mb-5">
 
-              <Quote className="w-10 h-10 text-purple-200 mb-4" />
+              <Quote className="w-8 h-8 text-purple-200 mb-3" />
 
-              <p className="text-xl text-slate-600 leading-relaxed italic">
+              <p className="text-base text-slate-600 leading-relaxed italic">
 
                 "I started Study Global with a simple belief: every student deserves access to world-class education, regardless of where they come from. Our mission is to break down barriers and open doors to global opportunities."
 
@@ -196,7 +196,7 @@ export default function FounderVideoSection() {
 
             {/* Founder Info */}
 
-            <div className="flex items-center gap-4 mb-8 p-4 bg-white rounded-2xl shadow-lg">
+            <div className="flex items-center gap-3 mb-5 p-3 bg-white rounded-2xl shadow-lg">
 
               <img 
 
@@ -204,13 +204,13 @@ export default function FounderVideoSection() {
 
                 alt="Dr. James Richardson"
 
-                className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
+                className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
 
               />
 
               <div>
 
-                <h4 className="font-bold text-slate-900 text-lg">Dr. James Richardson</h4>
+                <h4 className="font-bold text-slate-900 text-base">Dr. James Richardson</h4>
 
                 <p className="text-purple-600 text-sm">Founder & CEO, Study Global</p>
 
@@ -224,17 +224,17 @@ export default function FounderVideoSection() {
 
             {/* Achievements */}
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-3">
 
               <motion.div 
 
-                className="text-center p-4 bg-white rounded-xl shadow-md"
+                className="text-center p-3 bg-white rounded-xl shadow-md"
 
                 whileHover={{ y: -5 }}
 
               >
 
-                <Award className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
+                <Award className="w-6 h-6 text-yellow-500 mx-auto mb-1.5" />
 
                 <p className="font-bold text-slate-900">15+ Years</p>
 
@@ -244,13 +244,13 @@ export default function FounderVideoSection() {
 
               <motion.div 
 
-                className="text-center p-4 bg-white rounded-xl shadow-md"
+                className="text-center p-3 bg-white rounded-xl shadow-md"
 
                 whileHover={{ y: -5 }}
 
               >
 
-                <Users className="w-8 h-8 text-purple-500 mx-auto mb-2" />
+                <Users className="w-6 h-6 text-purple-500 mx-auto mb-1.5" />
 
                 <p className="font-bold text-slate-900">10,000+</p>
 
@@ -260,13 +260,13 @@ export default function FounderVideoSection() {
 
               <motion.div 
 
-                className="text-center p-4 bg-white rounded-xl shadow-md"
+                className="text-center p-3 bg-white rounded-xl shadow-md"
 
                 whileHover={{ y: -5 }}
 
               >
 
-                <Globe className="w-8 h-8 text-pink-500 mx-auto mb-2" />
+                <Globe className="w-6 h-6 text-pink-500 mx-auto mb-1.5" />
 
                 <p className="font-bold text-slate-900">20+</p>
 

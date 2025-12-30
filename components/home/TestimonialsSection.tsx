@@ -154,7 +154,7 @@ export default function TestimonialsSection() {
 
     const angle = ((index - activeIndex) * (360 / total)) - 90;
 
-    const radius = 280;
+    const radius = 224;
 
     const x = Math.cos((angle * Math.PI) / 180) * radius;
 
@@ -168,7 +168,7 @@ export default function TestimonialsSection() {
 
   return (
 
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-[69px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
 
       {/* Background Decorations */}
 
@@ -202,7 +202,7 @@ export default function TestimonialsSection() {
 
         <motion.div 
 
-          className="text-center mb-8"
+          className="text-center mb-6"
 
           initial={{ opacity: 0, y: 30 }}
 
@@ -212,13 +212,13 @@ export default function TestimonialsSection() {
 
         >
 
-          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-4">
+          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-3">
 
             Success Stories
 
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
 
             Voices of
 
@@ -232,7 +232,7 @@ export default function TestimonialsSection() {
 
         {/* Circular Testimonials Layout */}
 
-        <div className="relative min-h-[700px] flex items-center justify-center">
+        <div className="relative min-h-[560px] flex items-center justify-center">
 
           
 
@@ -258,9 +258,9 @@ export default function TestimonialsSection() {
 
                   animate={{
 
-                    x: pos.x - 40,
+                    x: pos.x - 32,
 
-                    y: pos.y - 40,
+                    y: pos.y - 32,
 
                     scale: isActive ? 1.3 : 0.9,
 
@@ -276,7 +276,7 @@ export default function TestimonialsSection() {
 
                   <motion.div 
 
-                    className={`relative w-20 h-20 rounded-full overflow-hidden border-4 transition-all duration-300 ${
+                    className={`relative w-16 h-16 rounded-full overflow-hidden border-4 transition-all duration-300 ${
 
                       isActive 
 
@@ -320,7 +320,7 @@ export default function TestimonialsSection() {
 
                   {/* Flag */}
 
-                  <div className="absolute -bottom-1 -right-1 text-xl">
+                  <div className="absolute -bottom-1 -right-1 text-lg">
 
                     {testimonial.flag}
 
@@ -374,7 +374,7 @@ export default function TestimonialsSection() {
 
                 transition={{ duration: 0.4 }}
 
-                className="bg-white rounded-3xl shadow-2xl shadow-purple-100/50 p-8 lg:p-10 text-center"
+                className="bg-white rounded-3xl shadow-2xl shadow-purple-100/50 p-6 lg:p-8 text-center"
 
               >
 
@@ -382,7 +382,7 @@ export default function TestimonialsSection() {
 
                 <motion.div 
 
-                  className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 -mt-16 shadow-lg"
+                  className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 -mt-11 shadow-lg"
 
                   initial={{ rotate: -20 }}
 
@@ -390,7 +390,7 @@ export default function TestimonialsSection() {
 
                 >
 
-                  <Quote className="w-8 h-8 text-white" />
+                  <Quote className="w-6 h-6 text-white" />
 
                 </motion.div>
 
@@ -398,9 +398,9 @@ export default function TestimonialsSection() {
 
                 {/* Mobile Profile Image */}
 
-                <div className="lg:hidden mb-6">
+                <div className="lg:hidden mb-4">
 
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-purple-200 mx-auto shadow-lg">
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-purple-200 mx-auto shadow-lg">
 
                     <img 
 
@@ -420,7 +420,7 @@ export default function TestimonialsSection() {
 
                 {/* Rating */}
 
-                <div className="flex justify-center gap-1 mb-6">
+                <div className="flex justify-center gap-1 mb-4">
 
                   {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
 
@@ -436,7 +436,7 @@ export default function TestimonialsSection() {
 
                     >
 
-                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
 
                     </motion.div>
 
@@ -448,7 +448,7 @@ export default function TestimonialsSection() {
 
                 {/* Quote */}
 
-                <p className="text-lg lg:text-xl text-slate-700 leading-relaxed mb-8 italic">
+                <p className="text-base lg:text-lg text-slate-700 leading-relaxed mb-5 italic">
 
                   "{testimonials[activeIndex].quote}"
 
@@ -458,19 +458,19 @@ export default function TestimonialsSection() {
 
                 {/* Divider */}
 
-                <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-6" />
+                <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4" />
 
 
 
                 {/* Name & Info */}
 
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
+                <h3 className="text-lg font-bold text-slate-900 mb-1">
 
                   {testimonials[activeIndex].name}
 
                 </h3>
 
-                <p className="text-purple-600 text-sm mb-3">
+                <p className="text-purple-600 text-sm mb-2">
 
                   {testimonials[activeIndex].location} {testimonials[activeIndex].flag}
 
@@ -478,7 +478,7 @@ export default function TestimonialsSection() {
 
                 
 
-                <div className="inline-flex items-center gap-2 bg-purple-50 px-4 py-2 rounded-full">
+                <div className="inline-flex items-center gap-2 bg-purple-50 px-3 py-1.5 rounded-full">
 
                   <GraduationCap className="w-4 h-4 text-purple-600" />
 
@@ -500,7 +500,7 @@ export default function TestimonialsSection() {
 
             {/* Navigation Buttons */}
 
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center gap-4 mt-6">
 
               <Button
 
@@ -514,7 +514,7 @@ export default function TestimonialsSection() {
 
               >
 
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4" />
 
               </Button>
 
@@ -536,9 +536,9 @@ export default function TestimonialsSection() {
 
                       index === activeIndex 
 
-                        ? 'w-8 h-3 bg-gradient-to-r from-purple-500 to-pink-500' 
+                        ? 'w-6 h-2.5 bg-gradient-to-r from-purple-500 to-pink-500' 
 
-                        : 'w-3 h-3 bg-slate-300 hover:bg-purple-300'
+                        : 'w-2.5 h-2.5 bg-slate-300 hover:bg-purple-300'
 
                     }`}
 
@@ -562,7 +562,7 @@ export default function TestimonialsSection() {
 
               >
 
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4" />
 
               </Button>
 
@@ -612,7 +612,7 @@ export default function TestimonialsSection() {
 
         <motion.div 
 
-          className="mt-8 flex flex-wrap justify-center gap-8"
+          className="mt-7 flex flex-wrap justify-center gap-7"
 
           initial={{ opacity: 0 }}
 

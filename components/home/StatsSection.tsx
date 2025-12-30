@@ -64,7 +64,7 @@ export default function StatsSection() {
 
   return (
 
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-[86px] relative overflow-hidden">
 
       {/* Background Image with Overlay */}
 
@@ -116,7 +116,7 @@ export default function StatsSection() {
 
         <motion.div 
 
-          className="text-center mb-16"
+          className="text-center mb-10"
 
           initial={{ opacity: 0, y: 30 }}
 
@@ -128,19 +128,19 @@ export default function StatsSection() {
 
         >
 
-          <span className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <span className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold mb-3">
 
             WHO WE ARE
 
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
 
             A Global Education Consultancy
 
           </h2>
 
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base text-purple-100 max-w-3xl mx-auto leading-relaxed">
 
             Study Global is headquartered in London, UK, with presence in Nigeria, Ghana, Kenya, and Qatar. 
 
@@ -156,7 +156,7 @@ export default function StatsSection() {
 
         <motion.div 
 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-4"
 
           initial={{ opacity: 0 }}
 
@@ -186,11 +186,11 @@ export default function StatsSection() {
 
             >
 
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:bg-white/20 transition-all duration-300">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:bg-white/20 transition-all duration-300">
 
                 <motion.div 
 
-                  className="text-5xl lg:text-6xl font-bold text-white mb-2"
+                  className="text-3xl lg:text-4xl font-bold text-white mb-1"
 
                   whileInView={{ scale: [0.5, 1.1, 1] }}
 
@@ -204,9 +204,9 @@ export default function StatsSection() {
 
                 </motion.div>
 
-                <h3 className="text-xl font-semibold text-yellow-400 mb-2">{stat.label}</h3>
+                <h3 className="text-sm font-semibold text-yellow-400 mb-1">{stat.label}</h3>
 
-                <p className="text-purple-200 text-sm">{stat.description}</p>
+                <p className="text-purple-200 text-xs">{stat.description}</p>
 
               </div>
 
@@ -222,7 +222,7 @@ export default function StatsSection() {
 
         <motion.div 
 
-          className="mt-16 flex flex-wrap justify-center items-center gap-8"
+          className="mt-10 flex flex-wrap justify-center items-center gap-5"
 
           initial={{ opacity: 0 }}
 
@@ -236,7 +236,7 @@ export default function StatsSection() {
 
           <p className="text-purple-200 text-sm">Trusted by leading institutions:</p>
 
-          <div className="flex flex-wrap justify-center gap-8 opacity-60">
+          <div className="flex flex-wrap justify-center gap-5 opacity-60">
 
             {['British Council', 'UKVI', 'EAIE', 'ICEF'].map((partner, i) => (
 

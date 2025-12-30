@@ -116,7 +116,7 @@ export default function NewsSection() {
 
   return (
 
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-[69px] bg-slate-50 relative overflow-hidden">
 
       {/* Background Decoration */}
 
@@ -130,7 +130,7 @@ export default function NewsSection() {
 
         <motion.div 
 
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-9"
 
           initial={{ opacity: 0, y: 30 }}
 
@@ -142,13 +142,13 @@ export default function NewsSection() {
 
           <div>
 
-            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-3">
 
               Latest News
 
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
 
               Stay <span className="text-purple-600">Informed</span>
 
@@ -160,7 +160,7 @@ export default function NewsSection() {
 
             variant="outline" 
 
-            className="border-2 border-purple-200 hover:border-purple-500 rounded-full px-6 self-start md:self-auto"
+            className="border-2 border-purple-200 hover:border-purple-500 rounded-full px-5 self-start md:self-auto"
 
           >
 
@@ -176,7 +176,7 @@ export default function NewsSection() {
 
         {/* News Grid */}
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-5">
 
           {/* Featured Article */}
 
@@ -198,7 +198,7 @@ export default function NewsSection() {
 
                 <CardContent className="p-0 h-full flex flex-col">
 
-                  <div className="relative h-72 lg:h-80 overflow-hidden">
+                  <div className="relative h-56 lg:h-64 overflow-hidden">
 
                     <motion.img 
 
@@ -220,9 +220,9 @@ export default function NewsSection() {
 
                     {/* Category Badge */}
 
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-3 left-3">
 
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${categoryColors[featuredNews.category]}`}>
+                      <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${categoryColors[featuredNews.category]}`}>
 
                         {featuredNews.category}
 
@@ -234,9 +234,9 @@ export default function NewsSection() {
 
                     {/* Featured Badge */}
 
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-3 right-3">
 
-                      <span className="bg-yellow-400 text-slate-900 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-yellow-400 text-slate-900 px-2.5 py-0.5 rounded-full text-xs font-semibold">
 
                         Featured
 
@@ -248,9 +248,9 @@ export default function NewsSection() {
 
 
 
-                  <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                  <div className="p-5 lg:p-6 flex-1 flex flex-col">
 
-                    <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                    <div className="flex items-center gap-3 text-sm text-slate-500 mb-3">
 
                       <span className="flex items-center gap-1">
 
@@ -272,7 +272,7 @@ export default function NewsSection() {
 
 
 
-                    <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                    <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
 
                       {featuredNews.title}
 
@@ -280,7 +280,7 @@ export default function NewsSection() {
 
 
 
-                    <p className="text-slate-600 leading-relaxed mb-6 flex-1">
+                    <p className="text-slate-600 leading-relaxed mb-4 flex-1">
 
                       {featuredNews.excerpt}
 
@@ -316,7 +316,7 @@ export default function NewsSection() {
 
           {/* Other Articles */}
 
-          <div className="space-y-6">
+          <div className="space-y-5">
 
             {otherNews.map((news, index) => (
 
@@ -340,7 +340,7 @@ export default function NewsSection() {
 
                     <div className="flex flex-col sm:flex-row">
 
-                      <div className="sm:w-40 h-40 sm:h-auto overflow-hidden flex-shrink-0">
+                      <div className="sm:w-32 h-32 sm:h-auto overflow-hidden flex-shrink-0">
 
                         <motion.img 
 
@@ -358,11 +358,11 @@ export default function NewsSection() {
 
                       </div>
 
-                      <div className="p-5 flex-1">
+                      <div className="p-4 flex-1">
 
-                        <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center gap-2.5 mb-2.5">
 
-                          <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${categoryColors[news.category]}`}>
+                          <span className={`px-1.5 py-0.5 rounded-full text-xs font-medium ${categoryColors[news.category]}`}>
 
                             {news.category}
 
@@ -372,7 +372,7 @@ export default function NewsSection() {
 
                         </div>
 
-                        <h4 className="font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+                        <h4 className="font-bold text-slate-900 mb-1.5 group-hover:text-purple-600 transition-colors line-clamp-2">
 
                           {news.title}
 
@@ -399,56 +399,6 @@ export default function NewsSection() {
           </div>
 
         </div>
-
-
-
-        {/* Newsletter CTA */}
-
-        <motion.div 
-
-          className="mt-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 lg:p-12 text-center"
-
-          initial={{ opacity: 0, y: 30 }}
-
-          whileInView={{ opacity: 1, y: 0 }}
-
-          viewport={{ once: true }}
-
-        >
-
-          <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-
-            Never Miss an Update
-
-          </h3>
-
-          <p className="text-purple-100 mb-6 max-w-xl mx-auto">
-
-            Subscribe to our newsletter for the latest scholarships, visa updates, and education news.
-
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-
-            <input 
-
-              type="email" 
-
-              placeholder="Enter your email"
-
-              className="flex-1 px-5 py-3 rounded-full border-0 focus:ring-2 focus:ring-yellow-400 outline-none"
-
-            />
-
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full px-8 font-semibold">
-
-              Subscribe
-
-            </Button>
-
-          </div>
-
-        </motion.div>
 
       </div>
 

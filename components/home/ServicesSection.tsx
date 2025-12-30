@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 
-import { GraduationCap, Building2, FileCheck, Plane, ArrowRight } from 'lucide-react';
+import { GraduationCap, Building2, FileCheck, Plane, Users, Briefcase, Globe, Shield, Handshake } from 'lucide-react';
 
 const services = [
 
@@ -74,6 +74,70 @@ const services = [
 
     iconBg: "bg-cyan-100"
 
+  },
+
+  {
+
+    icon: Users,
+
+    title: "Student Engagement Hub",
+
+    description: "Centralized platform to manage and support international students throughout their journey.",
+
+    color: "from-emerald-500 to-teal-500",
+
+    bgColor: "bg-emerald-50",
+
+    iconBg: "bg-emerald-100"
+
+  },
+
+  {
+
+    icon: Handshake,
+
+    title: "Mentorship Network",
+
+    description: "Connect with alumni mentors who have successfully navigated the international student journey.",
+
+    color: "from-indigo-500 to-purple-500",
+
+    bgColor: "bg-indigo-50",
+
+    iconBg: "bg-indigo-100"
+
+  },
+
+  {
+
+    icon: Briefcase,
+
+    title: "Career Pathways",
+
+    description: "Access exclusive job opportunities, internships, and career resources tailored for international students.",
+
+    color: "from-orange-500 to-red-500",
+
+    bgColor: "bg-orange-50",
+
+    iconBg: "bg-orange-100"
+
+  },
+
+  {
+
+    icon: Shield,
+
+    title: "Immigration Support",
+
+    description: "Automated visa tracking and compliance tools to ensure student success.",
+
+    color: "from-violet-500 to-purple-500",
+
+    bgColor: "bg-violet-50",
+
+    iconBg: "bg-violet-100"
+
   }
 
 ];
@@ -116,7 +180,7 @@ export default function ServicesSection() {
 
   return (
 
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="pt-[54px] pb-[86px] bg-white relative overflow-hidden">
 
       {/* Background Decorations */}
 
@@ -130,7 +194,7 @@ export default function ServicesSection() {
 
         <motion.div 
 
-          className="text-center mb-16"
+          className="text-center mb-14"
 
           initial={{ opacity: 0, y: 30 }}
 
@@ -142,13 +206,13 @@ export default function ServicesSection() {
 
         >
 
-          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-4">
+          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-[14px]">
 
             Our Services
 
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-5">
 
             How We Help You
 
@@ -168,7 +232,7 @@ export default function ServicesSection() {
 
         <motion.div 
 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-5"
 
           variants={containerVariants}
 
@@ -186,13 +250,13 @@ export default function ServicesSection() {
 
               <Card className="group h-full border-0 shadow-lg shadow-slate-100 hover:shadow-2xl hover:shadow-purple-100/50 transition-all duration-500 overflow-hidden">
 
-                <CardContent className="p-8">
+                <CardContent className="p-5">
 
                   {/* Icon */}
 
                   <motion.div 
 
-                    className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}
 
                     whileHover={{ rotate: [0, -10, 10, 0] }}
 
@@ -200,39 +264,35 @@ export default function ServicesSection() {
 
                   >
 
-                    <service.icon className={`w-8 h-8 bg-gradient-to-r ${service.color} bg-clip-text`} style={{ color: service.color.includes('purple') ? '#9333EA' : service.color.includes('pink') ? '#EC4899' : service.color.includes('yellow') ? '#EAB308' : '#06B6D4' }} />
+                    <service.icon 
+                      className={`w-6 h-6 bg-gradient-to-r ${service.color} bg-clip-text`} 
+                      style={{ 
+                        color: service.color.includes('purple-500') ? '#9333EA' : 
+                               service.color.includes('pink') ? '#EC4899' : 
+                               service.color.includes('yellow') ? '#EAB308' : 
+                               service.color.includes('cyan') || service.color.includes('blue-500') ? '#06B6D4' : 
+                               service.color.includes('emerald') || service.color.includes('teal') ? '#10B981' : 
+                               service.color.includes('indigo') ? '#6366F1' : 
+                               service.color.includes('orange') || service.color.includes('red') ? '#F97316' : 
+                               service.color.includes('violet') ? '#8B5CF6' : '#9333EA' 
+                      }} 
+                    />
 
                   </motion.div>
 
                   {/* Content */}
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">
 
                     {service.title}
 
                   </h3>
 
-                  <p className="text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 leading-relaxed">
 
                     {service.description}
 
                   </p>
-
-                  {/* Link */}
-
-                  <motion.div 
-
-                    className="flex items-center text-purple-600 font-medium cursor-pointer"
-
-                    whileHover={{ x: 5 }}
-
-                  >
-
-                    Learn more
-
-                    <ArrowRight className="ml-2 w-4 h-4" />
-
-                  </motion.div>
 
                 </CardContent>
 
@@ -245,38 +305,6 @@ export default function ServicesSection() {
             </motion.div>
 
           ))}
-
-        </motion.div>
-
-        {/* CTA */}
-
-        <motion.div 
-
-          className="text-center mt-16"
-
-          initial={{ opacity: 0 }}
-
-          whileInView={{ opacity: 1 }}
-
-          viewport={{ once: true }}
-
-          transition={{ delay: 0.4 }}
-
-        >
-
-          <Button 
-
-            size="lg"
-
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-6 text-lg rounded-full shadow-lg shadow-purple-500/30"
-
-          >
-
-            Explore All Services
-
-            <ArrowRight className="ml-2 h-5 w-5" />
-
-          </Button>
 
         </motion.div>
 

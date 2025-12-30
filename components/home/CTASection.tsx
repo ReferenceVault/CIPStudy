@@ -6,9 +6,7 @@ import { motion } from 'framer-motion';
 
 import { Button } from "@/components/ui/button";
 
-import { Input } from "@/components/ui/input";
-
-import { ArrowRight, Calendar, MessageCircle, Mail } from 'lucide-react';
+import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 
 
 
@@ -16,7 +14,7 @@ export default function CTASection() {
 
   return (
 
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-[69px] relative overflow-hidden">
 
       {/* Background */}
 
@@ -66,7 +64,7 @@ export default function CTASection() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-center">
 
           {/* Left Content */}
 
@@ -82,7 +80,7 @@ export default function CTASection() {
 
             <motion.span 
 
-              className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold mb-6"
+              className="inline-block bg-yellow-400 text-slate-900 px-3 py-1.5 rounded-full text-sm font-semibold mb-4"
 
               initial={{ scale: 0 }}
 
@@ -100,7 +98,7 @@ export default function CTASection() {
 
             
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
 
               Ready to Transform
 
@@ -112,7 +110,7 @@ export default function CTASection() {
 
             
 
-            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+            <p className="text-base lg:text-lg text-purple-100 mb-5 leading-relaxed">
 
               Take the first step towards your international education journey. 
 
@@ -124,19 +122,19 @@ export default function CTASection() {
 
             {/* Quick Actions */}
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-3 mb-5">
 
               <motion.div 
 
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
 
                 whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.15)" }}
 
               >
 
-                <Calendar className="w-8 h-8 text-yellow-400 mb-3" />
+                <Calendar className="w-6 h-6 text-yellow-400 mb-2.5" />
 
-                <h3 className="font-semibold text-white mb-1">Book Consultation</h3>
+                <h3 className="font-semibold text-white mb-1 text-sm lg:text-base">Book Consultation</h3>
 
                 <p className="text-purple-200 text-sm">Free 30-min session</p>
 
@@ -146,15 +144,15 @@ export default function CTASection() {
 
               <motion.div 
 
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/10"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10"
 
                 whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.15)" }}
 
               >
 
-                <MessageCircle className="w-8 h-8 text-pink-400 mb-3" />
+                <MessageCircle className="w-6 h-6 text-pink-400 mb-2.5" />
 
-                <h3 className="font-semibold text-white mb-1">Live Chat</h3>
+                <h3 className="font-semibold text-white mb-1 text-sm lg:text-base">Live Chat</h3>
 
                 <p className="text-purple-200 text-sm">Instant support 24/7</p>
 
@@ -170,35 +168,19 @@ export default function CTASection() {
 
                 size="lg"
 
-                className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-8 py-6 text-lg rounded-full font-semibold shadow-lg shadow-yellow-400/30"
+                className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-6 py-5 text-base rounded-full font-semibold shadow-lg shadow-yellow-400/30"
 
               >
 
                 Apply Now
 
-                <ArrowRight className="ml-2 h-5 w-5" />
-
-              </Button>
-
-              <Button 
-
-                size="lg"
-
-                variant="outline"
-
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
-
-              >
-
-                Call Us: +44 20 1234 5678
+                <ArrowRight className="ml-2 h-4 w-4" />
 
               </Button>
 
             </div>
 
           </motion.div>
-
-
 
           {/* Right Content - Newsletter */}
 
@@ -210,81 +192,39 @@ export default function CTASection() {
 
             viewport={{ once: true }}
 
-            transition={{ delay: 0.2 }}
+            className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-10 border border-white/20"
 
           >
 
-            <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl">
+            <h3 className="text-xl lg:text-2xl font-bold text-white mb-3">
 
-              <div className="text-center mb-8">
+              Never Miss an Update
 
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            </h3>
 
-                  <Mail className="w-8 h-8 text-purple-600" />
+            <p className="text-purple-100 mb-5">
 
-                </div>
+              Subscribe to our newsletter for the latest scholarships, visa updates, and education news.
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Stay Updated</h3>
+            </p>
 
-                <p className="text-slate-600">Get the latest scholarships, events, and university news</p>
+            <div className="flex flex-col sm:flex-row gap-3">
 
-              </div>
+              <input 
 
+                type="email" 
 
+                placeholder="Enter your email"
 
-              <form className="space-y-4">
+                className="flex-1 px-4 py-2.5 rounded-full border-0 focus:ring-2 focus:ring-yellow-400 outline-none text-slate-900"
 
-                <Input 
+              />
 
-                  placeholder="Your full name"
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full px-6 font-semibold whitespace-nowrap">
 
-                  className="py-6 px-5 rounded-xl border-slate-200 focus:border-purple-500"
+                Subscribe
 
-                />
-
-                <Input 
-
-                  type="email"
-
-                  placeholder="Your email address"
-
-                  className="py-6 px-5 rounded-xl border-slate-200 focus:border-purple-500"
-
-                />
-
-                <Input 
-
-                  placeholder="Phone number (optional)"
-
-                  className="py-6 px-5 rounded-xl border-slate-200 focus:border-purple-500"
-
-                />
-
-                
-
-                <Button 
-
-                  type="submit"
-
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg rounded-xl shadow-lg shadow-purple-500/30"
-
-                >
-
-                  Get Free Consultation
-
-                  <ArrowRight className="ml-2 h-5 w-5" />
-
-                </Button>
-
-              </form>
-
-
-
-              <p className="text-center text-sm text-slate-500 mt-6">
-
-                By signing up, you agree to our <a href="#" className="text-purple-600 underline">Terms</a> and <a href="#" className="text-purple-600 underline">Privacy Policy</a>
-
-              </p>
+              </Button>
 
             </div>
 
