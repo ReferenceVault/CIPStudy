@@ -212,24 +212,6 @@ export default function Footer() {
 
             </ul>
 
-            
-
-            {/* WhatsApp Button */}
-
-            <a 
-
-              href="#" 
-
-              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full mt-6 transition-colors"
-
-            >
-
-              <MessageCircle className="w-5 h-5" />
-
-              Chat on WhatsApp
-
-            </a>
-
           </div>
 
         </div>

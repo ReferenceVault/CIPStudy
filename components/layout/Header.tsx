@@ -136,14 +136,6 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-4">
 
-            <div className="flex items-center gap-2 text-slate-600">
-
-              <Mail className="w-4 h-4" />
-
-              <span className="text-sm">info@studyglobal.com</span>
-
-            </div>
-
             <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-6">
 
               Apply Now

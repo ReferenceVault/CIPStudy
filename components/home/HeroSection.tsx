@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, BookOpen, Briefcase, Globe, GraduationCap, Award, Star, Rocket, Target, Plane, PlayCircle } from 'lucide-react';
+import { ArrowRight, Sparkles, BookOpen, Briefcase, Globe, GraduationCap, Award, Star, Rocket, Target, Plane, PlayCircle, Clock, FileCheck, MessageSquare, DollarSign } from 'lucide-react';
 import Image from 'next/image';
 
-const words = ['Student Success', 'Global Dreams', 'Bright Futures', 'Your Journey'];
+const words = ['Global Dreams', 'Bright future', 'successful careers', 'Immigration Pathways'];
 
 export default function HeroSection() {
   const [currentWord, setCurrentWord] = useState(0);
@@ -39,16 +39,16 @@ export default function HeroSection() {
     { 
       src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 
       position: 'left-[8%] top-[20%]', 
-      tag: 'Success', 
-      tagIcon: Award, 
+      tag: '24/7 Support', 
+      tagIcon: Clock, 
       delay: 0, 
       color: 'bg-gradient-to-br from-yellow-400 to-orange-500'
     },
     { 
       src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face', 
       position: 'left-[15%] bottom-[25%]', 
-      tag: 'Learning', 
-      tagIcon: BookOpen, 
+      tag: 'Expert Counselling', 
+      tagIcon: MessageSquare, 
       delay: 0.2, 
       color: 'bg-gradient-to-br from-cyan-400 to-blue-500'
     },
@@ -63,8 +63,8 @@ export default function HeroSection() {
     { 
       src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face', 
       position: 'right-[8%] top-[25%]', 
-      tag: 'Global', 
-      tagIcon: Globe, 
+      tag: 'Success', 
+      tagIcon: Award, 
       delay: 0.6, 
       color: 'bg-gradient-to-br from-emerald-400 to-teal-500'
     },
@@ -72,15 +72,15 @@ export default function HeroSection() {
 
   const floatingTags = [
     { 
-      tag: 'Immigration', 
-      icon: Plane, 
+      tag: 'Visa Assistance', 
+      icon: FileCheck, 
       position: 'left-[calc(12%+20px)] top-[45%]', 
       delay: 0.8, 
       color: 'bg-gradient-to-br from-indigo-500 to-purple-500'
     },
     { 
-      tag: 'Mentorship', 
-      icon: PlayCircle, 
+      tag: 'Immigration', 
+      icon: Plane, 
       position: 'right-[calc(12%+20px)] top-[50%]', 
       delay: 1.2, 
       color: 'bg-gradient-to-br from-pink-500 to-rose-500'
@@ -482,7 +482,7 @@ export default function HeroSection() {
                   initial={{ scale: 0, rotate: -90 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: img.delay + 1, type: "spring" }}
-                  className="absolute -bottom-3 -right-3 bg-white rounded-2xl px-4 py-2 shadow-xl flex items-center gap-2 border-2 border-purple-200"
+                  className="absolute -bottom-3 -right-3 bg-white rounded-2xl px-5 py-2 shadow-xl flex items-center gap-2 border-2 border-purple-200 whitespace-nowrap"
                 >
                   <TagIcon className="w-4 h-4 text-purple-600" />
                   <span className="text-sm font-bold text-gray-800">{img.tag}</span>
@@ -531,17 +531,16 @@ export default function HeroSection() {
             transition={{ duration: 0.6, type: "spring" }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 text-white px-6 py-3 rounded-full text-sm font-bold mb-7 shadow-lg"
           >
-            <Sparkles className="w-5 h-5" />
-            🌍 Empowering Students Worldwide
+            CIP 🌍 Your global journey starts here!
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-0 tracking-tight"
+            className="text-[2.55rem] md:text-[3.825rem] font-bold text-gray-900 mb-0 tracking-tight"
           >
-            Your Way to
+            Connecting you to
           </motion.h1>
 
           <motion.div
@@ -550,7 +549,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center justify-center py-2 -mt-2"
           >
-            <span className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent leading-none pb-2">
+            <span className="text-[2.55rem] md:text-[3.825rem] font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent leading-none pb-2">
               {displayText}
               <span className="animate-pulse">|</span>
             </span>
@@ -560,9 +559,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mt-6 mb-12 leading-relaxed"
+            className="text-[0.95625rem] md:text-[1.0625rem] text-gray-600 max-w-2xl mx-auto mt-6 mb-12 leading-relaxed"
           >
-            Join a growing community of international students building better futures through education, mentorship, and career opportunities.
+            True Ed-Tech Platform supporting prospective students to StudyAbroad directly without subagents. 24/7 End to End Support Program Search, Expert Counseling, Study visa assistance.
           </motion.p>
 
           {/* CTA Section */}
@@ -572,8 +571,28 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
+            {/* Tile Left of Book a Demo */}
+            <div className="hidden lg:block -mt-[30px] mr-[62px]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
+              >
+                <motion.div
+                  animate={{ 
+                    y: [0, -15, 0],
+                    rotate: [0, 3, 0, -3, 0]
+                  }}
+                  transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
+                  className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-2 border-2 border-white/20"
+                >
+                  <DollarSign className="w-4 h-4 text-white" />
+                  <span className="text-sm font-bold text-white">Student Loans</span>
+                </motion.div>
+              </motion.div>
+            </div>
+
             <div className="text-center">
-              <p className="text-sm text-gray-500 mb-3">Higher Ed Institutions</p>
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300"
@@ -582,16 +601,26 @@ export default function HeroSection() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
-            <div className="text-center">
-              <p className="text-sm text-gray-500 mb-3">Students & Grads</p>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-50 px-8 py-6 text-lg rounded-full transition-all duration-300"
+
+            {/* Tile Right side */}
+            <div className="hidden lg:block -mt-[30px] ml-[62px]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8, type: "spring" }}
               >
-                Sign Up Free
-                <Sparkles className="ml-2 w-5 h-5" />
-              </Button>
+                <motion.div
+                  animate={{ 
+                    y: [0, -15, 0],
+                    rotate: [0, 3, 0, -3, 0]
+                  }}
+                  transition={{ repeat: Infinity, duration: 4, delay: 1.2 }}
+                  className="bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-2 border-2 border-white/20"
+                >
+                  <MessageSquare className="w-4 h-4 text-white" />
+                  <span className="text-sm font-bold text-white">Mentorship</span>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
