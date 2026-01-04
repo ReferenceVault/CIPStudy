@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 
-import { GraduationCap, Building2, FileCheck, Plane, Users, Briefcase, Globe, Shield, Handshake } from 'lucide-react';
+import { GraduationCap, Building2, FileCheck, Plane, Users, Briefcase, Globe, Shield, Handshake, DollarSign, Clock } from 'lucide-react';
 
 const services = [
 
@@ -18,7 +18,7 @@ const services = [
 
     title: "Expert Consultation",
 
-    description: "Personalized guidance from experienced counsellors who understand your academic aspirations and help you choose the perfect program.",
+    description: "Personalized guidance from experienced counsellors who understand your academic aspirations and help you choose the perfect program",
 
     color: "from-purple-500 to-purple-600",
 
@@ -32,9 +32,9 @@ const services = [
 
     icon: Building2,
 
-    title: "Partner Universities",
+    title: "University Placement",
 
-    description: "Access to 150+ prestigious universities worldwide with insider insights into programs, culture, and admission processes.",
+    description: "Access to 200+ partner universities worldwide. We match you with institutions that fit your profile and aspirations.",
 
     color: "from-pink-500 to-pink-600",
 
@@ -46,11 +46,27 @@ const services = [
 
   {
 
+    icon: DollarSign,
+
+    title: "Student Loans",
+
+    description: "Financial Support - Student loan assistance and payment solutions for international students. Payment plans. Currency exchange guidance.",
+
+    color: "from-green-500 to-emerald-600",
+
+    bgColor: "bg-green-50",
+
+    iconBg: "bg-green-100"
+
+  },
+
+  {
+
     icon: FileCheck,
 
     title: "Visa Assistance",
 
-    description: "Comprehensive support throughout your visa application with a 99% success rate. We handle the paperwork so you can focus on your future.",
+    description: "Comprehensive support through the entire visa application process with a 95% success rate. Visa tracking and compliance tools to ensure student success.",
 
     color: "from-yellow-500 to-orange-500",
 
@@ -66,7 +82,7 @@ const services = [
 
     title: "Pre-Departure Support",
 
-    description: "From accommodation to travel arrangements, we ensure you're fully prepared for your new adventure abroad.",
+    description: "Everything you need before you travel - from flights, accommodation booking to travel arrangements, airport pickup and orientation.",
 
     color: "from-cyan-500 to-blue-500",
 
@@ -78,11 +94,11 @@ const services = [
 
   {
 
-    icon: Users,
+    icon: Clock,
 
-    title: "Student Engagement Hub",
+    title: "24/7 Student Support",
 
-    description: "Centralized platform to manage and support international students throughout their journey.",
+    description: "Centralized platform and 24/7 zoom virtual office staff to manage and support international students throughout their journey.",
 
     color: "from-emerald-500 to-teal-500",
 
@@ -96,9 +112,9 @@ const services = [
 
     icon: Handshake,
 
-    title: "Mentorship Network",
+    title: "Mentorship & Career",
 
-    description: "Connect with alumni mentors who have successfully navigated the international student journey.",
+    description: "Connect with alumni mentors who have successfully navigated the journey. Access exclusive job opportunities, internships, and career resources tailored for international students.",
 
     color: "from-indigo-500 to-purple-500",
 
@@ -110,27 +126,11 @@ const services = [
 
   {
 
-    icon: Briefcase,
-
-    title: "Career Pathways",
-
-    description: "Access exclusive job opportunities, internships, and career resources tailored for international students.",
-
-    color: "from-orange-500 to-red-500",
-
-    bgColor: "bg-orange-50",
-
-    iconBg: "bg-orange-100"
-
-  },
-
-  {
-
     icon: Shield,
 
     title: "Immigration Support",
 
-    description: "Automated visa tracking and compliance tools to ensure student success.",
+    description: "Post-study work permits and permanent residency pathway guidance. Work permit assistance. PR pathway guidance. Family sponsorship. Compliance support.",
 
     color: "from-violet-500 to-purple-500",
 
@@ -180,7 +180,7 @@ export default function ServicesSection() {
 
   return (
 
-    <section className="pt-[54px] pb-[86px] bg-white relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] bg-white relative overflow-hidden">
 
       {/* Background Decorations */}
 
@@ -206,23 +206,28 @@ export default function ServicesSection() {
 
         >
 
-          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-[14px]">
+          <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-0.5">
 
             Our Services
 
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-5">
+          <h2 className="text-[1.9rem] lg:text-[2.55rem] font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent mb-0.5">
 
-            How We Help You
-
-            <span className="text-purple-600"> Succeed</span>
+            First True Virtual EdTech Platform
 
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-[1.0625rem] lg:text-[1.2rem] font-semibold text-slate-700 max-w-2xl mx-auto mb-2">
 
-            From the first consultation to your arrival at university, we&apos;re with you every step of the way.
+            How We Help You <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent font-semibold">Succeed</span>
+
+          </h3>
+
+          <p className="text-[1.0625rem] text-slate-600 max-w-2xl mx-auto">
+
+            Get expert guidance from anywhere in the world, 24/7. 
+            From the first consultation to your arrival at university, till your immigration, we&apos;re with you 24/7 every step of the way.
 
           </p>
 

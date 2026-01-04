@@ -10,9 +10,15 @@ import FounderVideoSection from '@/components/home/FounderVideoSection';
 
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 
+import HowItWorksSection from '@/components/home/HowItWorksSection';
+
+import AboutSection from '@/components/home/AboutSection';
+
 import DestinationsSection from '@/components/home/DestinationsSection';
 
 import NewsSection from '@/components/home/NewsSection';
+
+import SocialMediaSection from '@/components/home/SocialMediaSection';
 
 import PartnersSection from '@/components/home/PartnersSection';
 
@@ -32,13 +38,19 @@ export default function Home() {
 
       <StatsSection />
 
+      <HowItWorksSection />
+
+      <AboutSection />
+
       <FounderVideoSection />
 
       <DestinationsSection />
 
-      <TestimonialsSection />
-
       <NewsSection />
+
+      <SocialMediaSection />
+
+      <TestimonialsSection />
 
       <PartnersSection />
 

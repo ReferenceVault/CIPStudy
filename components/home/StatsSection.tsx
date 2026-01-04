@@ -66,7 +66,7 @@ export default function StatsSection() {
 
   return (
 
-    <section className="py-[86px] relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] relative overflow-hidden">
 
       {/* Background Image with Overlay */}
 
@@ -138,17 +138,21 @@ export default function StatsSection() {
 
           </span>
 
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">
 
             A Global Education Consultancy
 
           </h2>
 
+          <h3 className="text-xl lg:text-2xl font-semibold text-white/90 mb-3">
+
+            First True Virtual EdTech Study Abroad Platform
+
+          </h3>
+
           <p className="text-base text-purple-100 max-w-3xl mx-auto leading-relaxed">
 
-            Study Global is headquartered in London, UK, with presence in Nigeria, Ghana, Kenya, and Qatar. 
-
-            We partner with accredited universities worldwide to help students achieve their dreams.
+            CIP is First True Virtual EdTech Study Abroad Platform headquartered in Toronto, Canada, with presence in India, Nepal, Pakistan, Bangladesh, Ukraine Philippines and Brazil. We&apos;ve revolutionized international education recruitment. We partner with accredited universities worldwide to help students achieve their global dreams.
 
           </p>
 
@@ -226,7 +230,7 @@ export default function StatsSection() {
 
         <motion.div 
 
-          className="mt-10 flex flex-wrap justify-center items-center gap-5"
+          className="mt-10 text-center"
 
           initial={{ opacity: 0 }}
 
@@ -238,21 +242,7 @@ export default function StatsSection() {
 
         >
 
-          <p className="text-purple-200 text-sm">Trusted by leading institutions:</p>
-
-          <div className="flex flex-wrap justify-center gap-5 opacity-60">
-
-            {['British Council', 'UKVI', 'EAIE', 'ICEF'].map((partner, i) => (
-
-              <div key={i} className="text-white font-semibold text-lg px-4 py-2 border border-white/20 rounded-lg">
-
-                {partner}
-
-              </div>
-
-            ))}
-
-          </div>
+          <p className="text-purple-100 text-base max-w-2xl mx-auto leading-relaxed">Connect with 500+ universities via Zoom consultations available 24/7. Everything online, Apply from anywhere.</p>
 
         </motion.div>
 

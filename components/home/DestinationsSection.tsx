@@ -8,30 +8,30 @@ import {
 
 const destinations = [
   {
-    id: 'uk',
-    name: 'United Kingdom',
-    flag: '🇬🇧',
-    heroImage: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&h=600&fit=crop',
-    universities: 150,
-    students: 1200,
-    avgCost: '£15,000 - £30,000/year',
-    visaTime: '3-4 weeks',
-    workPermit: '2 years post-study',
-    description: 'The United Kingdom offers world-class education with centuries of academic excellence. Home to prestigious universities like Oxford, Cambridge, and Imperial College, the UK attracts over 600,000 international students annually.',
+    id: 'canada',
+    name: 'Canada',
+    flag: '🇨🇦',
+    heroImage: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&h=600&fit=crop',
+    universities: 100,
+    students: 800,
+    avgCost: 'CAD 20,000 - 40,000/year',
+    visaTime: '8-12 weeks',
+    workPermit: 'PGWP: 1-3 years',
+    description: 'Canada combines high-quality education with welcoming immigration policies. Known for safety, multiculturalism, and natural beauty, Canada has become increasingly popular among international students seeking permanent residency pathways.',
     highlights: [
-      'Home to 4 of the world\'s top 10 universities',
-      'Graduate Route visa allows 2-year work stay',
-      'Rich cultural heritage and diverse student community',
-      'Strong research opportunities across all fields'
+      'Pathway to permanent residency through Express Entry',
+      'Post-graduation work permits up to 3 years',
+      'Affordable compared to US and UK',
+      'High quality of life and safety'
     ],
     topUniversities: [
-      { name: 'University of Oxford', ranking: '#1 UK', courses: 350 },
-      { name: 'University of Cambridge', ranking: '#2 UK', courses: 300 },
-      { name: 'Imperial College London', ranking: '#3 UK', courses: 200 },
-      { name: 'University of Manchester', ranking: '#6 UK', courses: 450 },
-      { name: 'University of Edinburgh', ranking: '#5 UK', courses: 380 }
+      { name: 'University of Toronto', ranking: '#1 Canada', courses: 700 },
+      { name: 'McGill University', ranking: '#2 Canada', courses: 400 },
+      { name: 'University of British Columbia', ranking: '#3 Canada', courses: 500 },
+      { name: 'University of Alberta', ranking: '#4 Canada', courses: 350 },
+      { name: 'University of Waterloo', ranking: '#5 Canada', courses: 280 }
     ],
-    popularCourses: ['Business Management', 'Computer Science', 'Engineering', 'Medicine', 'Law', 'Data Science']
+    popularCourses: ['Engineering', 'Computer Science', 'Business', 'Healthcare', 'Environmental Science', 'Hospitality']
   },
   {
     id: 'usa',
@@ -60,30 +60,56 @@ const destinations = [
     popularCourses: ['Computer Science', 'Business/MBA', 'Engineering', 'Medicine', 'Arts & Design', 'Psychology']
   },
   {
-    id: 'canada',
-    name: 'Canada',
-    flag: '🇨🇦',
-    heroImage: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&h=600&fit=crop',
-    universities: 100,
-    students: 800,
-    avgCost: 'CAD 20,000 - 40,000/year',
-    visaTime: '8-12 weeks',
-    workPermit: 'PGWP: 1-3 years',
-    description: 'Canada combines high-quality education with welcoming immigration policies. Known for safety, multiculturalism, and natural beauty, Canada has become increasingly popular among international students seeking permanent residency pathways.',
+    id: 'uk',
+    name: 'United Kingdom',
+    flag: '🇬🇧',
+    heroImage: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&h=600&fit=crop',
+    universities: 150,
+    students: 1200,
+    avgCost: '£15,000 - £30,000/year',
+    visaTime: '3-4 weeks',
+    workPermit: '2 years post-study',
+    description: 'The United Kingdom offers world-class education with centuries of academic excellence. Home to prestigious universities like Oxford, Cambridge, and Imperial College, the UK attracts over 600,000 international students annually.',
     highlights: [
-      'Pathway to permanent residency through Express Entry',
-      'Post-graduation work permits up to 3 years',
-      'Affordable compared to US and UK',
-      'High quality of life and safety'
+      'Home to 4 of the world\'s top 10 universities',
+      'Graduate Route visa allows 2-year work stay',
+      'Rich cultural heritage and diverse student community',
+      'Strong research opportunities across all fields'
     ],
     topUniversities: [
-      { name: 'University of Toronto', ranking: '#1 Canada', courses: 700 },
-      { name: 'McGill University', ranking: '#2 Canada', courses: 400 },
-      { name: 'University of British Columbia', ranking: '#3 Canada', courses: 500 },
-      { name: 'University of Alberta', ranking: '#4 Canada', courses: 350 },
-      { name: 'University of Waterloo', ranking: '#5 Canada', courses: 280 }
+      { name: 'University of Oxford', ranking: '#1 UK', courses: 350 },
+      { name: 'University of Cambridge', ranking: '#2 UK', courses: 300 },
+      { name: 'Imperial College London', ranking: '#3 UK', courses: 200 },
+      { name: 'University of Manchester', ranking: '#6 UK', courses: 450 },
+      { name: 'University of Edinburgh', ranking: '#5 UK', courses: 380 }
     ],
-    popularCourses: ['Engineering', 'Computer Science', 'Business', 'Healthcare', 'Environmental Science', 'Hospitality']
+    popularCourses: ['Business Management', 'Computer Science', 'Engineering', 'Medicine', 'Law', 'Data Science']
+  },
+  {
+    id: 'germany',
+    name: 'Germany',
+    flag: '🇩🇪',
+    heroImage: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&h=600&fit=crop',
+    universities: 120,
+    students: 500,
+    avgCost: '€0 - €25,000/year',
+    visaTime: '4-8 weeks',
+    workPermit: '18 months post-study',
+    description: 'Germany offers world-class education at public universities with many programs offering free or low-cost tuition even for international students. Known for excellence in engineering, technology, and research, Germany provides excellent post-study work opportunities.',
+    highlights: [
+      'Free tuition at most public universities',
+      'Strong focus on engineering and technology',
+      '18-month post-study work permit',
+      'Pathway to permanent residency'
+    ],
+    topUniversities: [
+      { name: 'Technical University of Munich', ranking: '#1 Germany', courses: 250 },
+      { name: 'Heidelberg University', ranking: '#2 Germany', courses: 200 },
+      { name: 'LMU Munich', ranking: '#3 Germany', courses: 300 },
+      { name: 'Humboldt University Berlin', ranking: '#4 Germany', courses: 280 },
+      { name: 'RWTH Aachen', ranking: '#5 Germany', courses: 320 }
+    ],
+    popularCourses: ['Engineering', 'Computer Science', 'Business', 'Natural Sciences', 'Medicine', 'Architecture']
   },
   {
     id: 'australia',
@@ -110,32 +136,6 @@ const destinations = [
       { name: 'UNSW Sydney', ranking: '#5 Australia', courses: 380 }
     ],
     popularCourses: ['Engineering', 'Healthcare', 'Business', 'IT', 'Environmental Science', 'Hospitality']
-  },
-  {
-    id: 'europe',
-    name: 'Europe',
-    flag: '🇪🇺',
-    heroImage: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&h=600&fit=crop',
-    universities: 120,
-    students: 500,
-    avgCost: '€5,000 - €25,000/year',
-    visaTime: '4-8 weeks',
-    workPermit: 'Varies by country',
-    description: 'Europe offers diverse educational opportunities across multiple countries, often at lower costs than English-speaking destinations. Countries like Germany and Norway offer free or low-cost education even for international students.',
-    highlights: [
-      'Many countries offer free or low-cost tuition',
-      'Rich cultural experiences across countries',
-      'Strong research traditions',
-      'Many programs taught in English'
-    ],
-    topUniversities: [
-      { name: 'ETH Zurich (Switzerland)', ranking: '#7 World', courses: 200 },
-      { name: 'TU Munich (Germany)', ranking: '#30 World', courses: 250 },
-      { name: 'Sorbonne University (France)', ranking: '#40 World', courses: 300 },
-      { name: 'University of Amsterdam', ranking: '#55 World', courses: 280 },
-      { name: 'KU Leuven (Belgium)', ranking: '#45 World', courses: 320 }
-    ],
-    popularCourses: ['Engineering', 'Business', 'Arts & Humanities', 'Medicine', 'Environmental Studies', 'Design']
   }
 ];
 
@@ -145,7 +145,7 @@ export default function DestinationsSection() {
   return (
     <section className="bg-white relative overflow-hidden">
       {/* Hero Section */}
-      <div className="relative pt-20 pb-20 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 overflow-hidden">
+      <div className="relative pt-12 pb-12 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
@@ -158,16 +158,16 @@ export default function DestinationsSection() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-xs font-semibold tracking-wider uppercase mb-2">
               Study Destinations
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
               Explore World-Class{' '}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                 Study Destinations
               </span>
             </h2>
-            <p className="text-xl text-purple-100">
+            <p className="text-base text-purple-100">
               Discover opportunities in the world&apos;s top study destinations. 
               Find the perfect country and university for your academic goals.
             </p>
@@ -176,7 +176,7 @@ export default function DestinationsSection() {
       </div>
 
       {/* Destination Tabs */}
-      <div className="py-8 border-b border-slate-100 sticky top-20 bg-white z-30">
+      <div className="py-4 border-b border-slate-100 sticky top-20 bg-white z-30">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-wrap justify-center gap-3">
             {destinations.map((dest) => (
