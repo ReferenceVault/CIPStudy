@@ -322,12 +322,12 @@ export default function SocialMediaSection() {
   };
 
   return (
-    <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-white to-purple-50/30 relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-white to-purple-50/30 relative overflow-hidden px-[3%]">
       {/* Background Decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100/50 rounded-full blur-3xl translate-y-1/2" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <motion.div 
           className="text-center mb-12"
@@ -339,9 +339,6 @@ export default function SocialMediaSection() {
           <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text text-sm font-semibold tracking-wider uppercase mb-3">
             Social Media Updates
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
-            Follow Our <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent">Latest Updates</span>
-          </h2>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
             Latest updates on our Instagram and YouTube Channel
           </p>

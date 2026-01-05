@@ -14,7 +14,7 @@ export default function CTASection() {
 
   return (
 
-    <section className="py-[69px] relative overflow-hidden">
+    <section className="py-[69px] relative overflow-hidden px-[3%]">
 
       {/* Background */}
 

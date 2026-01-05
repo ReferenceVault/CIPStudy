@@ -143,7 +143,7 @@ export default function DestinationsSection() {
   const [selectedDestination, setSelectedDestination] = useState(destinations[0]);
 
   return (
-    <section className="bg-white relative overflow-hidden">
+    <section className="bg-white relative overflow-hidden px-[3%]">
       {/* Hero Section */}
       <div className="relative pt-12 pb-12 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 overflow-hidden">
         <div className="absolute inset-0">

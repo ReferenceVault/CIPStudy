@@ -66,7 +66,7 @@ export default function StatsSection() {
 
   return (
 
-    <section className="pt-[46px] pb-[69px] relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] relative overflow-hidden px-[3%]">
 
       {/* Background Image with Overlay */}
 

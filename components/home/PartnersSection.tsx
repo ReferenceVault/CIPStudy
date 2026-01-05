@@ -28,7 +28,7 @@ export default function PartnersSection() {
 
   return (
 
-    <section className="py-[58px] bg-slate-50 border-y border-slate-100">
+    <section className="py-[58px] bg-slate-50 border-y border-slate-100 px-[3%]">
 
       <div className="container mx-auto px-6 lg:px-12">
 

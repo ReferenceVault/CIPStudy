@@ -43,7 +43,7 @@ function CountUp({ end, suffix = '', duration = 2 }: { end: number; suffix?: str
 
 export default function AboutSection() {
   return (
-    <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden px-[3%]">
       {/* Background Elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-100 rounded-full blur-3xl opacity-40" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-pink-100 rounded-full blur-3xl opacity-40" />
