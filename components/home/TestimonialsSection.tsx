@@ -170,7 +170,7 @@ export default function TestimonialsSection() {
 
   return (
 
-    <section className="py-[69px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-[69px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden px-[3%]">
 
       {/* Background Decorations */}
 

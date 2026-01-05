@@ -88,7 +88,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-50 via-white to-cyan-50">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-50 via-white to-cyan-50 px-[3%]">
       {/* Animated Wavy Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Top wave */}
@@ -531,6 +531,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, type: "spring" }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 text-white px-6 py-3 rounded-full text-sm font-bold mb-7 shadow-lg"
           >
+            <Sparkles className="w-5 h-5 text-white" />
             CIP 🌍 Your global journey starts here!
           </motion.div>
 
@@ -592,14 +593,25 @@ export default function HeroSection() {
               </motion.div>
             </div>
 
-            <div className="text-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300"
-              >
-                Book a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-semibold text-gray-700 mb-2">Higher Ed Institutions</span>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300"
+                >
+                  Book a Demo
+                </Button>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-semibold text-gray-700 mb-2">Students & Grads</span>
+                <Button
+                  size="lg"
+                  className="bg-[#FFC107] hover:bg-[#FFB300] text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-yellow-500/50 hover:shadow-xl hover:shadow-yellow-500/60 transition-all duration-300 font-bold"
+                >
+                  Apply Now
+                </Button>
+              </div>
             </div>
 
             {/* Tile Right side */}

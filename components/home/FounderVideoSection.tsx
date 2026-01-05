@@ -18,7 +18,7 @@ export default function FounderVideoSection() {
 
   return (
 
-    <section className="py-[86px] bg-gradient-to-b from-white to-purple-50 relative overflow-hidden">
+    <section className="py-[86px] bg-gradient-to-b from-white to-purple-50 relative overflow-hidden px-[3%]">
 
       {/* Background Decorations */}
 

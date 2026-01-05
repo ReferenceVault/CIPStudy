@@ -180,7 +180,7 @@ export default function ServicesSection() {
 
   return (
 
-    <section className="pt-[46px] pb-[69px] bg-white relative overflow-hidden">
+    <section className="pt-[46px] pb-[69px] bg-white relative overflow-hidden px-[3%]">
 
       {/* Background Decorations */}
 

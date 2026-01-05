@@ -83,7 +83,7 @@ export default function HowItWorksSection() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <section className="pt-[46px] pb-[69px] bg-white">
+    <section className="pt-[46px] pb-[69px] bg-white px-[3%]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,20 +105,39 @@ export default function HowItWorksSection() {
         </motion.div>
 
         {/* Steps tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {steps.map((step) => (
-            <button
-              key={step.id}
-              onClick={() => setActiveStep(step.id)}
-              className={`px-4 py-2 rounded-lg font-medium text-xs transition-all ${
-                activeStep === step.id
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}
-            >
-              {step.id}. {step.title}
-            </button>
-          ))}
+        <div className="flex flex-col gap-3 mb-8">
+          {/* First line: Steps 1-5 */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {steps.filter(step => step.id <= 5).map((step) => (
+              <button
+                key={step.id}
+                onClick={() => setActiveStep(step.id)}
+                className={`px-4 py-2 rounded-lg font-medium text-xs transition-all ${
+                  activeStep === step.id
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {step.id}. {step.title}
+              </button>
+            ))}
+          </div>
+          {/* Second line: Steps 6-8 */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {steps.filter(step => step.id > 5).map((step) => (
+              <button
+                key={step.id}
+                onClick={() => setActiveStep(step.id)}
+                className={`px-4 py-2 rounded-lg font-medium text-xs transition-all ${
+                  activeStep === step.id
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {step.id}. {step.title}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Active step detail */}

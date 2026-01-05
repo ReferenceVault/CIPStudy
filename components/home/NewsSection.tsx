@@ -116,7 +116,7 @@ export default function NewsSection() {
 
   return (
 
-    <section className="py-[69px] bg-slate-50 relative overflow-hidden">
+    <section className="py-[69px] bg-slate-50 relative overflow-hidden px-[3%]">
 
       {/* Background Decoration */}
 
