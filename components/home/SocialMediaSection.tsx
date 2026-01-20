@@ -185,10 +185,6 @@ export default function SocialMediaSection() {
   const [youtubeVideos, setYoutubeVideos] = useState<SocialMediaPost[]>(sampleYouTubeVideos);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchSocialMediaPosts();
-  }, [fetchSocialMediaPosts]);
-
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
     const date = new Date(dateString);
@@ -202,6 +198,48 @@ export default function SocialMediaSection() {
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? 's' : ''} ago`;
     if (diffDays < 365) return `${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) > 1 ? 's' : ''} ago`;
     return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) > 1 ? 's' : ''} ago`;
+  };
+
+  const getYouTubeThumbnail = (url: string) => {
+    let videoId = '';
+    
+    if (url.includes('youtube.com/watch?v=')) {
+      videoId = url.split('v=')[1]?.split('&')[0] || '';
+    } else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0] || '';
+    } else if (url.includes('youtube.com/shorts/')) {
+      videoId = url.split('shorts/')[1]?.split('?')[0] || '';
+    } else if (url.includes('youtube.com/embed/')) {
+      videoId = url.split('embed/')[1]?.split('?')[0] || '';
+    }
+    
+    if (videoId) {
+      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    }
+    
+    return null;
+  };
+
+  const getInstagramThumbnail = async (url: string): Promise<string | null> => {
+    try {
+      const response = await fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(url)}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.thumbnail_url) {
+          return data.thumbnail_url;
+        }
+      }
+    } catch (err) {
+      console.log('Failed to fetch Instagram thumbnail:', err);
+    }
+    
+    return null;
   };
 
   const fetchSocialMediaPosts = useCallback(async () => {
@@ -276,47 +314,9 @@ export default function SocialMediaSection() {
     }
   }, []);
 
-  const getYouTubeThumbnail = (url: string) => {
-    let videoId = '';
-    
-    if (url.includes('youtube.com/watch?v=')) {
-      videoId = url.split('v=')[1]?.split('&')[0] || '';
-    } else if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1]?.split('?')[0] || '';
-    } else if (url.includes('youtube.com/shorts/')) {
-      videoId = url.split('shorts/')[1]?.split('?')[0] || '';
-    } else if (url.includes('youtube.com/embed/')) {
-      videoId = url.split('embed/')[1]?.split('?')[0] || '';
-    }
-    
-    if (videoId) {
-      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-    }
-    
-    return null;
-  };
-
-  const getInstagramThumbnail = async (url: string): Promise<string | null> => {
-    try {
-      const response = await fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(url)}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.thumbnail_url) {
-          return data.thumbnail_url;
-        }
-      }
-    } catch (err) {
-      console.log('Failed to fetch Instagram thumbnail:', err);
-    }
-    
-    return null;
-  };
+  useEffect(() => {
+    fetchSocialMediaPosts();
+  }, [fetchSocialMediaPosts]);
 
   return (
     <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-white to-purple-50/30 relative overflow-hidden px-[3%]">
