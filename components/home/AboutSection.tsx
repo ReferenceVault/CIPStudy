@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { CheckCircle2, Award } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 const features = [
   "Personalized counseling tailored to your goals",
@@ -119,33 +120,37 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-3">
                   <div className="relative h-36 rounded-xl overflow-hidden shadow-lg">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" 
                       alt="Students graduating"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <div className="relative h-48 rounded-xl overflow-hidden shadow-lg">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=400&fit=crop" 
                       alt="University campus"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>
                 <div className="space-y-3 pt-6">
                   <div className="relative h-48 rounded-xl overflow-hidden shadow-lg">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=400&fit=crop" 
                       alt="Students studying"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <div className="relative h-36 rounded-xl overflow-hidden shadow-lg">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=400&h=300&fit=crop" 
                       alt="Consultation session"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   GraduationCap, Building2, Users
 } from 'lucide-react';
+import Image from 'next/image';
 
 const destinations = [
   {
@@ -211,10 +212,11 @@ export default function DestinationsSection() {
             <div className="grid lg:grid-cols-2 gap-4">
               {/* Left Panel - Hero Image with Overlay Stats */}
               <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden">
-                <img 
+                <Image 
                   src={selectedDestination.heroImage}
                   alt={selectedDestination.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">

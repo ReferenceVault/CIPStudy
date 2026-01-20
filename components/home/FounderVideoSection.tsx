@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 
 import { Play, X, Quote, Award, Users, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 
 
@@ -54,15 +55,21 @@ export default function FounderVideoSection() {
 
                  onClick={() => setIsVideoOpen(true)}>
 
-              <img 
+              <div className="relative w-full h-[400px] lg:h-[500px]">
 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=500&fit=crop"
+                <Image 
 
-                alt="Founder Video"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=500&fit=crop"
 
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                  alt="Founder Video"
 
-              />
+                  fill
+
+                  className="object-cover"
+
+                />
+
+              </div>
 
               
 
@@ -198,15 +205,21 @@ export default function FounderVideoSection() {
 
             <div className="flex items-center gap-3 mb-5 p-3 bg-white rounded-2xl shadow-lg">
 
-              <img 
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-purple-200 flex-shrink-0">
 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                <Image 
 
-                alt="Dr. James Richardson"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
 
-                className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
+                  alt="Dr. James Richardson"
 
-              />
+                  fill
+
+                  className="object-cover"
+
+                />
+
+              </div>
 
               <div>
 
