@@ -90,7 +90,7 @@ export default function ContactSection() {
             Get In Touch
           </span>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            Visit us at any of our offices or reach out to us. We're here to help you on your journey to study abroad.
+            Visit us at any of our offices or reach out to us. We&apos;re here to help you on your journey to study abroad.
           </p>
         </motion.div>
 
@@ -171,7 +171,7 @@ export default function ContactSection() {
                 Send Us a Message
               </h2>
               <p className="text-gray-600">
-                Fill out the form below and we'll get back to you as soon as possible
+                Fill out the form below and we&apos;ll get back to you as soon as possible
               </p>
             </div>
 

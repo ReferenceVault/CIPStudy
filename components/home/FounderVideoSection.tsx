@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Play, X, Quote, Award, Users, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FounderVideoSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -14,6 +15,9 @@ export default function FounderVideoSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,14 +33,10 @@ export default function FounderVideoSection() {
       { threshold: 0.5 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(section);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(section);
     };
   }, []);
 
@@ -141,9 +141,11 @@ export default function FounderVideoSection() {
             </div>
             <div className="flex items-center gap-3 mb-5 p-3 bg-white rounded-2xl shadow-lg">
 
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
                 alt="Dr. Gautham Kolluri"
+                width={48}
+                height={48}
                 className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
               />
 
