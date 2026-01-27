@@ -28,7 +28,7 @@ const testimonials = [
 
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=face",
 
-    quote: "Study Global made my dream of studying in the UK a reality. Their team guided me through every step, from choosing the right program to securing my visa. I couldn't have done it without them!",
+    quote: "Study Abroad made my dream of studying in the UK a reality. Their team guided me through every step, from choosing the right program to securing my visa. I couldn't have done it without them!",
 
     rating: 5,
 
@@ -72,7 +72,7 @@ const testimonials = [
 
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
 
-    quote: "From the initial consultation to my arrival in London, Study Global was there every step of the way. Their knowledge of UK universities is unmatched. I'm now living my dream!",
+    quote: "From the initial consultation to my arrival in London, Study Abroad was there every step of the way. Their knowledge of UK universities is unmatched. I'm now living my dream!",
 
     rating: 5,
 
@@ -116,7 +116,7 @@ const testimonials = [
 
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
 
-    quote: "I was overwhelmed by the application process, but Study Global simplified everything. Their step-by-step approach made it stress-free. Now I'm studying at my dream university!",
+    quote: "I was overwhelmed by the application process, but Study Abroad simplified everything. Their step-by-step approach made it stress-free. Now I'm studying at my dream university!",
 
     rating: 5,
 

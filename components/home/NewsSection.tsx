@@ -74,7 +74,7 @@ const newsItems = [
 
     id: 4,
 
-    title: "Study Global Opens New Office in Dubai",
+    title: "Study Abroad Opens New Office in Dubai",
 
     excerpt: "Expanding our reach to better serve students in the Middle East region with personalized consultations.",
 

@@ -4,21 +4,13 @@ import React, { useState, useEffect } from 'react';
 
 import Link from 'next/link';
 
+import Image from 'next/image';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Button } from "@/components/ui/button";
 
-import { 
-
-  GraduationCap, 
-
-  Menu, 
-
-  X, 
-
-  Mail
-
-} from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 
 
@@ -88,17 +80,25 @@ export default function Header() {
 
           <Link href="/" className="flex items-center gap-3">
 
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+            <Image
 
-              <GraduationCap className="w-7 h-7 text-white" />
+              src="/logo.jpeg"
 
-            </div>
+              alt="CIP Study Abroad"
+
+              width={48}
+
+              height={48}
+
+              className="h-12 w-auto object-contain"
+
+            />
 
             <div>
 
               <span className="text-xl font-bold text-slate-900">Study</span>
 
-              <span className="text-xl font-bold text-purple-600">Global</span>
+              <span className="text-xl font-bold text-purple-600">Abroad</span>
 
             </div>
 
