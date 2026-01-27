@@ -4,13 +4,13 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import Image from 'next/image';
+
 import { motion } from 'framer-motion';
 
 import { Button } from "@/components/ui/button";
 
 import { 
-
-  GraduationCap, 
 
   Facebook,
 
@@ -68,17 +68,25 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 mb-6">
 
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+              <Image
 
-                <GraduationCap className="w-7 h-7 text-white" />
+                src="/logo.jpeg"
 
-              </div>
+                alt="CIP Study Abroad"
+
+                width={48}
+
+                height={48}
+
+                className="h-12 w-auto object-contain"
+
+              />
 
               <div>
 
                 <span className="text-xl font-bold">Study</span>
 
-                <span className="text-xl font-bold text-purple-400">Global</span>
+                <span className="text-xl font-bold text-purple-400">Abroad</span>
 
               </div>
 
@@ -224,7 +232,7 @@ export default function Footer() {
 
           <p className="text-slate-500 text-sm">
 
-            © {new Date().getFullYear()} StudyGlobal. All rights reserved.
+            © {new Date().getFullYear()} Study Abroad. All rights reserved.
 
           </p>
 
