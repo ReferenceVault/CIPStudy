@@ -1,21 +1,69 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Play, X, Quote, Award, Users, Globe } from 'lucide-react';
-import Image from 'next/image';
-
-// Replace with your YouTube video ID when you have a founder video
-const FOUNDER_VIDEO_YOUTUBE_ID = 'YOUR_VIDEO_ID';
-const FOUNDER_VIDEO_THUMBNAIL = `https://img.youtube.com/vi/${FOUNDER_VIDEO_YOUTUBE_ID === 'YOUR_VIDEO_ID' ? 'dQw4w9WgXcQ' : FOUNDER_VIDEO_YOUTUBE_ID}/maxresdefault.jpg`;
 
 export default function FounderVideoSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const previewVideoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && previewVideoRef.current) {
+            previewVideoRef.current.play().catch(() => {
+              // Auto-play was prevented, ignore
+            });
+          } else if (previewVideoRef.current) {
+            previewVideoRef.current.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const video = previewVideoRef.current;
+    if (!video) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+
+    return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+    };
+  }, []);
+
+  const handlePlayClick = () => {
+    if (previewVideoRef.current) {
+      previewVideoRef.current.play();
+    }
+  };
 
   return (
-    <section className="py-[86px] bg-gradient-to-b from-white to-purple-50 relative overflow-hidden px-[3%]">
+    <section ref={sectionRef} className="py-[86px] bg-gradient-to-b from-white to-purple-50 relative overflow-hidden px-[3%]">
       <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-200/30 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl translate-y-1/2" />
 
@@ -29,29 +77,35 @@ export default function FounderVideoSection() {
             className="relative"
           >
             <div
-              className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-200/50 group cursor-pointer"
-              onClick={() => setIsVideoOpen(true)}
+              className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-200/50 group"
             >
-              <img
-                src={FOUNDER_VIDEO_THUMBNAIL}
-                alt="Dr. Gautham Kolluri – Founder Video"
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+              <video
+                ref={previewVideoRef}
+                src="/foundervedio.mp4"
+                className="w-full h-[400px] lg:h-[500px] object-cover relative z-30"
+                muted
+                playsInline
+                controls
+                loop
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent group-hover:from-purple-900/90 transition-all duration-300" />
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                whileHover={{ scale: 1.1 }}
-              >
+              <div className={`absolute top-0 left-0 right-0 bottom-[60px] bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent group-hover:from-purple-900/90 transition-all duration-300 pointer-events-none z-10 ${isPlaying ? 'opacity-0' : ''}`} />
+              {!isPlaying && (
                 <motion.div
-                  className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl cursor-pointer group-hover:bg-yellow-400 transition-colors duration-300"
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute top-0 left-0 right-0 bottom-[60px] flex items-center justify-center pointer-events-none z-20"
+                  whileHover={{ scale: 1.1 }}
                 >
-                  <Play className="w-10 h-10 text-purple-600 ml-1" fill="currentColor" />
+                  <motion.div
+                    className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl cursor-pointer group-hover:bg-yellow-400 transition-colors duration-300 pointer-events-auto"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    onClick={handlePlayClick}
+                  >
+                    <Play className="w-10 h-10 text-purple-600 ml-1" fill="currentColor" />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-              <div className="absolute bottom-6 left-6 right-6">
+              )}
+              <div className="absolute bottom-[60px] left-6 right-6 pointer-events-none z-20">
                 <p className="text-white/80 text-sm mb-2">Watch Our Story</p>
                 <h3 className="text-white text-2xl font-bold">A Message from Dr. Gautham Kolluri</h3>
               </div>
@@ -146,17 +200,24 @@ export default function FounderVideoSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setIsVideoOpen(false)}
+                onClick={() => {
+                  if (videoRef.current) {
+                    videoRef.current.pause();
+                  }
+                  setIsVideoOpen(false);
+                }}
                 className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
-              <iframe
-                src={`https://www.youtube.com/embed/${FOUNDER_VIDEO_YOUTUBE_ID}?autoplay=1`}
-                title="A Message from Dr. Gautham Kolluri"
+              <video
+                ref={videoRef}
+                src="/foundervedio.mp4"
                 className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                controls
+                autoPlay
+                muted
+                playsInline
               />
             </motion.div>
           </motion.div>
