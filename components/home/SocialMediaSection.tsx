@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Youtube } from 'lucide-react';
+import Image from 'next/image';
 
 interface SocialMediaPost {
   _id?: string;
@@ -134,15 +135,11 @@ function InstagramReelCard({ reel, index }: { reel: SocialMediaPost; index: numb
       {/* Thumbnail/Image */}
       {thumbnailUrl ? (
         <div className="relative h-32 overflow-hidden">
-          <img
+          <Image
             src={thumbnailUrl}
             alt={reel.title || 'Instagram reel'}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              setThumbnailUrl(null);
-            }}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           {/* Instagram Icon Overlay */}
@@ -188,10 +185,6 @@ export default function SocialMediaSection() {
   const [youtubeVideos, setYoutubeVideos] = useState<SocialMediaPost[]>(sampleYouTubeVideos);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchSocialMediaPosts();
-  }, []);
-
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
     const date = new Date(dateString);
@@ -207,7 +200,49 @@ export default function SocialMediaSection() {
     return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) > 1 ? 's' : ''} ago`;
   };
 
-  const fetchSocialMediaPosts = async () => {
+  const getYouTubeThumbnail = (url: string) => {
+    let videoId = '';
+    
+    if (url.includes('youtube.com/watch?v=')) {
+      videoId = url.split('v=')[1]?.split('&')[0] || '';
+    } else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0] || '';
+    } else if (url.includes('youtube.com/shorts/')) {
+      videoId = url.split('shorts/')[1]?.split('?')[0] || '';
+    } else if (url.includes('youtube.com/embed/')) {
+      videoId = url.split('embed/')[1]?.split('?')[0] || '';
+    }
+    
+    if (videoId) {
+      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    }
+    
+    return null;
+  };
+
+  const getInstagramThumbnail = async (url: string): Promise<string | null> => {
+    try {
+      const response = await fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(url)}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.thumbnail_url) {
+          return data.thumbnail_url;
+        }
+      }
+    } catch (err) {
+      console.log('Failed to fetch Instagram thumbnail:', err);
+    }
+    
+    return null;
+  };
+
+  const fetchSocialMediaPosts = useCallback(async () => {
     try {
       setLoading(true);
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3002';
@@ -277,49 +312,11 @@ export default function SocialMediaSection() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const getYouTubeThumbnail = (url: string) => {
-    let videoId = '';
-    
-    if (url.includes('youtube.com/watch?v=')) {
-      videoId = url.split('v=')[1]?.split('&')[0] || '';
-    } else if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1]?.split('?')[0] || '';
-    } else if (url.includes('youtube.com/shorts/')) {
-      videoId = url.split('shorts/')[1]?.split('?')[0] || '';
-    } else if (url.includes('youtube.com/embed/')) {
-      videoId = url.split('embed/')[1]?.split('?')[0] || '';
-    }
-    
-    if (videoId) {
-      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-    }
-    
-    return null;
-  };
-
-  const getInstagramThumbnail = async (url: string): Promise<string | null> => {
-    try {
-      const response = await fetch(`/api/instagram-thumbnail?url=${encodeURIComponent(url)}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.thumbnail_url) {
-          return data.thumbnail_url;
-        }
-      }
-    } catch (err) {
-      console.log('Failed to fetch Instagram thumbnail:', err);
-    }
-    
-    return null;
-  };
+  useEffect(() => {
+    fetchSocialMediaPosts();
+  }, [fetchSocialMediaPosts]);
 
   return (
     <section className="pt-[46px] pb-[69px] bg-gradient-to-b from-white to-purple-50/30 relative overflow-hidden px-[3%]">
@@ -392,26 +389,11 @@ export default function SocialMediaSection() {
                       {/* Thumbnail/Image */}
                       {thumbnailUrl ? (
                         <div className="relative h-32 overflow-hidden">
-                          <img
+                          <Image
                             src={thumbnailUrl}
                             alt={video.title || 'YouTube video'}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              const videoIdFromUrl = getYouTubeThumbnail(video.url);
-                              if (videoIdFromUrl) {
-                                const videoId = video.url.includes('shorts/') 
-                                  ? video.url.split('shorts/')[1]?.split('?')[0] 
-                                  : video.url.split('v=')[1]?.split('&')[0] || video.url.split('youtu.be/')[1]?.split('?')[0];
-                                if (videoId) {
-                                  target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-                                } else {
-                                  target.style.display = 'none';
-                                }
-                              } else {
-                                target.style.display = 'none';
-                              }
-                            }}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                           {/* YouTube Icon Overlay */}

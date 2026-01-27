@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Play, X, Quote, Award, Users, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 // Replace with your YouTube video ID when you have a founder video
 const FOUNDER_VIDEO_YOUTUBE_ID = 'YOUR_VIDEO_ID';
@@ -36,6 +37,7 @@ export default function FounderVideoSection() {
                 alt="Dr. Gautham Kolluri – Founder Video"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent group-hover:from-purple-900/90 transition-all duration-300" />
               <motion.div
                 className="absolute inset-0 flex items-center justify-center"
@@ -84,11 +86,13 @@ export default function FounderVideoSection() {
               </p>
             </div>
             <div className="flex items-center gap-3 mb-5 p-3 bg-white rounded-2xl shadow-lg">
+
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
                 alt="Dr. Gautham Kolluri"
                 className="w-12 h-12 rounded-full object-cover border-2 border-purple-200"
               />
+
               <div>
                 <h4 className="font-bold text-slate-900 text-base">Dr. Gautham Kolluri</h4>
                 <p className="text-purple-600 text-sm">RCIC Founder Study Abroad</p>
