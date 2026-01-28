@@ -84,7 +84,7 @@ export default function Header() {
 
               src="/logo.jpeg"
 
-              alt="CIP Study Abroad"
+              alt="logo"
 
               width={48}
 
