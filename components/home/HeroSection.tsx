@@ -475,6 +475,7 @@ export default function HeroSection() {
                     width={128}
                     height={128}
                     className="w-full h-full rounded-3xl object-cover"
+                    unoptimized
                   />
                 </div>
                 {/* Bottom Right Tag */}
