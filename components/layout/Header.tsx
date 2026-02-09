@@ -98,7 +98,7 @@ export default function Header() {
             <div>
 
               <span className="text-xl font-bold text-slate-900">Study</span>
-
+              {' '}
               <span className="text-xl font-bold text-purple-600">Abroad</span>
 
             </div>

@@ -152,9 +152,9 @@ export default function CTASection() {
 
                 <MessageCircle className="w-6 h-6 text-pink-400 mb-2.5" />
 
-                <h3 className="font-semibold text-white mb-1 text-sm lg:text-base">Live Chat</h3>
+                <h3 className="font-semibold text-white mb-1 text-sm lg:text-base">Join our Zoom Virtual Office</h3>
 
-                <p className="text-purple-200 text-sm">Instant support 24/7</p>
+                <p className="text-purple-200 text-sm">24*7</p>
 
               </motion.div>
 

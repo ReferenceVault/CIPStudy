@@ -634,7 +634,7 @@ export default function TestimonialsSection() {
 
           {[
 
-            { value: "3,000+", label: "Students Placed" },
+            { value: "10,000+", label: "Students Placed" },
 
             { value: "4.9★", label: "Average Rating" },
 

@@ -150,8 +150,8 @@ export default function FounderVideoSection() {
               />
 
               <div>
-                <h4 className="font-bold text-slate-900 text-base">Dr. Gautham Kolluri</h4>
-                <p className="text-purple-600 text-sm">RCIC Founder Study Abroad</p>
+                <h4 className="font-bold text-slate-900 text-base">Dr. Gautham Kolluri, RCIC</h4>
+                <p className="text-purple-600 text-sm">Founder CIP Study Abroad</p>
                 <p className="text-slate-500 text-sm">Regulated Canadian Immigration Consultant</p>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function FounderVideoSection() {
                 whileHover={{ y: -5 }}
               >
                 <Award className="w-6 h-6 text-yellow-500 mx-auto mb-1.5" />
-                <p className="font-bold text-slate-900">15+ Years</p>
+                <p className="font-bold text-slate-900">25+ Years</p>
                 <p className="text-sm text-slate-500">Experience</p>
               </motion.div>
               <motion.div
@@ -177,7 +177,7 @@ export default function FounderVideoSection() {
                 whileHover={{ y: -5 }}
               >
                 <Globe className="w-6 h-6 text-pink-500 mx-auto mb-1.5" />
-                <p className="font-bold text-slate-900">20+</p>
+                <p className="font-bold text-slate-900">5+</p>
                 <p className="text-sm text-slate-500">Countries</p>
               </motion.div>
             </div>

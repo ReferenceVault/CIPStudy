@@ -85,7 +85,7 @@ export default function Footer() {
               <div>
 
                 <span className="text-xl font-bold">Study</span>
-
+                {' '}
                 <span className="text-xl font-bold text-purple-400">Abroad</span>
 
               </div>
@@ -164,7 +164,7 @@ export default function Footer() {
 
             <ul className="space-y-3">
 
-              {['United Kingdom', 'United States', 'Canada', 'Australia', 'Germany', 'Ireland'].map((item) => (
+              {['Canada', 'United States', 'United Kingdom', 'Australia', 'Germany'].map((item) => (
 
                 <li key={item}>
 
@@ -198,7 +198,7 @@ export default function Footer() {
 
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0 mt-1" />
 
-                <span className="text-slate-400">123 Education Street, London, UK EC1A 1BB</span>
+                <span className="text-slate-400">4789 Yonge St office 912, North York, ON M2N 0G3</span>
 
               </li>
 
@@ -206,7 +206,7 @@ export default function Footer() {
 
                 <Phone className="w-5 h-5 text-purple-400" />
 
-                <span className="text-slate-400">+44 20 1234 5678</span>
+                <span className="text-slate-400">+1 (647) 559-9989</span>
 
               </li>
 
@@ -214,7 +214,7 @@ export default function Footer() {
 
                 <Mail className="w-5 h-5 text-purple-400" />
 
-                <span className="text-slate-400">info@studyglobal.com</span>
+                <span className="text-slate-400">info@cipstudyabroad.com</span>
 
               </li>
 
@@ -232,7 +232,7 @@ export default function Footer() {
 
           <p className="text-slate-500 text-sm">
 
-            © {new Date().getFullYear()} Study Abroad. All rights reserved.
+            © {new Date().getFullYear()} Nexus Center For International Programs Inc | CIP Study Abroad. All rights reserved.
 
           </p>
 

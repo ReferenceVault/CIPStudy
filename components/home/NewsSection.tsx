@@ -42,7 +42,7 @@ const newsItems = [
 
     excerpt: "Applications are now open for fully-funded Commonwealth Scholarships. Don't miss this opportunity!",
 
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80",
 
     date: "Nov 28, 2024",
 
