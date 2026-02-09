@@ -121,7 +121,7 @@ export default function AboutSection() {
                 <div className="space-y-3">
                   <div className="relative h-36 rounded-xl overflow-hidden shadow-lg">
                     <Image 
-                      src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" 
+                      src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80" 
                       alt="Students graduating"
                       fill
                       className="object-cover"
