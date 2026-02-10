@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  GraduationCap, Building2, Users
+  Building2, Users, DollarSign, FileCheck, Briefcase, Clock, MapPin
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -15,24 +15,12 @@ const destinations = [
     heroImage: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&h=600&fit=crop',
     universities: 100,
     students: 800,
-    avgCost: 'CAD 20,000 - 40,000/year',
-    visaTime: '8-12 weeks',
-    workPermit: 'PGWP: 1-3 years',
-    description: 'Canada combines high-quality education with welcoming immigration policies. Known for safety, multiculturalism, and natural beauty, Canada has become increasingly popular among international students seeking permanent residency pathways.',
-    highlights: [
-      'Pathway to permanent residency through Express Entry',
-      'Post-graduation work permits up to 3 years',
-      'Affordable compared to US and UK',
-      'High quality of life and safety'
-    ],
-    topUniversities: [
-      { name: 'University of Toronto', ranking: '#1 Canada', courses: 700 },
-      { name: 'McGill University', ranking: '#2 Canada', courses: 400 },
-      { name: 'University of British Columbia', ranking: '#3 Canada', courses: 500 },
-      { name: 'University of Alberta', ranking: '#4 Canada', courses: 350 },
-      { name: 'University of Waterloo', ranking: '#5 Canada', courses: 280 }
-    ],
-    popularCourses: ['Engineering', 'Computer Science', 'Business', 'Healthcare', 'Environmental Science', 'Hospitality']
+    description: 'Canada is one of the most preferred destinations for international students due to its high-quality education system and globally accepted qualifications. Institutions focus strongly on practical learning and employability. The country offers a safe, multicultural environment and a high standard of living. Students benefit from clear immigration rules and generous work rights. Canada actively encourages international graduates to stay back. Post-study employment options are well structured. English is the main language of instruction. Long-term settlement prospects are strong.',
+    avgTuition: 'CAD 18K–25K / year',
+    studyVisaFee: 'CAD 235',
+    workWhileStudy: '24 hrs/week, full-time breaks',
+    postStudyWork: 'PGWP up to 3 yrs',
+    prPathway: 'Express Entry (CEC), PNPs',
   },
   {
     id: 'usa',
@@ -41,24 +29,12 @@ const destinations = [
     heroImage: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=1200&h=600&fit=crop',
     universities: 200,
     students: 1500,
-    avgCost: '$25,000 - $55,000/year',
-    visaTime: '4-6 weeks',
-    workPermit: 'OPT: 1-3 years',
-    description: 'The United States is the world\'s leading destination for international students. With over 4,000 accredited institutions, the US offers unparalleled diversity in programs, research opportunities, and campus experiences.',
-    highlights: [
-      'Most universities in global top 100 rankings',
-      'Flexible curriculum with major/minor options',
-      'Extensive research funding and facilities',
-      'Strong alumni networks and career opportunities'
-    ],
-    topUniversities: [
-      { name: 'Harvard University', ranking: '#1 World', courses: 400 },
-      { name: 'MIT', ranking: '#2 World', courses: 250 },
-      { name: 'Stanford University', ranking: '#3 World', courses: 300 },
-      { name: 'Yale University', ranking: '#8 World', courses: 350 },
-      { name: 'Columbia University', ranking: '#11 World', courses: 380 }
-    ],
-    popularCourses: ['Computer Science', 'Business/MBA', 'Engineering', 'Medicine', 'Arts & Design', 'Psychology']
+    description: 'The United States is known for its world-leading universities and research-driven education. It offers a wide range of programs across all disciplines. Degrees from the US are highly valued globally. Students gain exposure to advanced technology and innovation hubs. Academic flexibility is a key advantage. Work opportunities are structured and regulated. Long-term settlement is possible but competitive. Career outcomes depend strongly on employer sponsorship.',
+    avgTuition: 'USD 22K–35K / year',
+    studyVisaFee: 'USD 535',
+    workWhileStudy: 'CPT/OPT and only on campus',
+    postStudyWork: 'OPT 12–36 months',
+    prPathway: 'H-1B → Employer GC',
   },
   {
     id: 'uk',
@@ -67,50 +43,12 @@ const destinations = [
     heroImage: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&h=600&fit=crop',
     universities: 150,
     students: 1200,
-    avgCost: '£15,000 - £30,000/year',
-    visaTime: '3-4 weeks',
-    workPermit: '2 years post-study',
-    description: 'The United Kingdom offers world-class education with centuries of academic excellence. Home to prestigious universities like Oxford, Cambridge, and Imperial College, the UK attracts over 600,000 international students annually.',
-    highlights: [
-      'Home to 4 of the world\'s top 10 universities',
-      'Graduate Route visa allows 2-year work stay',
-      'Rich cultural heritage and diverse student community',
-      'Strong research opportunities across all fields'
-    ],
-    topUniversities: [
-      { name: 'University of Oxford', ranking: '#1 UK', courses: 350 },
-      { name: 'University of Cambridge', ranking: '#2 UK', courses: 300 },
-      { name: 'Imperial College London', ranking: '#3 UK', courses: 200 },
-      { name: 'University of Manchester', ranking: '#6 UK', courses: 450 },
-      { name: 'University of Edinburgh', ranking: '#5 UK', courses: 380 }
-    ],
-    popularCourses: ['Business Management', 'Computer Science', 'Engineering', 'Medicine', 'Law', 'Data Science']
-  },
-  {
-    id: 'germany',
-    name: 'Germany',
-    flag: '🇩🇪',
-    heroImage: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&h=600&fit=crop',
-    universities: 120,
-    students: 500,
-    avgCost: '€0 - €25,000/year',
-    visaTime: '4-8 weeks',
-    workPermit: '18 months post-study',
-    description: 'Germany offers world-class education at public universities with many programs offering free or low-cost tuition even for international students. Known for excellence in engineering, technology, and research, Germany provides excellent post-study work opportunities.',
-    highlights: [
-      'Free tuition at most public universities',
-      'Strong focus on engineering and technology',
-      '18-month post-study work permit',
-      'Pathway to permanent residency'
-    ],
-    topUniversities: [
-      { name: 'Technical University of Munich', ranking: '#1 Germany', courses: 250 },
-      { name: 'Heidelberg University', ranking: '#2 Germany', courses: 200 },
-      { name: 'LMU Munich', ranking: '#3 Germany', courses: 300 },
-      { name: 'Humboldt University Berlin', ranking: '#4 Germany', courses: 280 },
-      { name: 'RWTH Aachen', ranking: '#5 Germany', courses: 320 }
-    ],
-    popularCourses: ['Engineering', 'Computer Science', 'Business', 'Natural Sciences', 'Medicine', 'Architecture']
+    description: 'The UK offers globally recognized degrees with shorter course durations. Education focuses on academic depth and independent learning. Students benefit from a strong quality assurance system. The UK attracts international employers and global exposure. Courses are intensive and career-oriented. Healthcare is covered under the visa system. Post-study work options are clearly defined. Long-term residence is achievable through skilled employment.',
+    avgTuition: 'GBP 15K–25K / year',
+    studyVisaFee: 'GBP 490 + IHS',
+    workWhileStudy: '20 hrs/week',
+    postStudyWork: 'Graduate Route 2 yrs',
+    prPathway: 'Skilled Worker → ILR',
   },
   {
     id: 'australia',
@@ -119,24 +57,26 @@ const destinations = [
     heroImage: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=1200&h=600&fit=crop',
     universities: 80,
     students: 600,
-    avgCost: 'AUD 25,000 - 45,000/year',
-    visaTime: '4-8 weeks',
-    workPermit: '2-4 years post-study',
-    description: 'Australia offers excellent education in a stunning natural environment. With strong industry connections and generous post-study work rights, Australia is perfect for students seeking both quality education and migration opportunities.',
-    highlights: [
-      '6 universities in world top 100',
-      'Post-study work visa up to 4 years',
-      'Strong industry partnerships',
-      'Beautiful weather and lifestyle'
-    ],
-    topUniversities: [
-      { name: 'University of Melbourne', ranking: '#1 Australia', courses: 400 },
-      { name: 'University of Sydney', ranking: '#2 Australia', courses: 450 },
-      { name: 'Australian National University', ranking: '#3 Australia', courses: 300 },
-      { name: 'University of Queensland', ranking: '#4 Australia', courses: 350 },
-      { name: 'UNSW Sydney', ranking: '#5 Australia', courses: 380 }
-    ],
-    popularCourses: ['Engineering', 'Healthcare', 'Business', 'IT', 'Environmental Science', 'Hospitality']
+    description: 'Australia is known for its high academic standards and strong student welfare. Institutions emphasize practical skills and industry exposure. The country offers a relaxed lifestyle and safe environment. International students enjoy generous work rights. Education quality is strictly regulated by the government. Australia follows a transparent points-based immigration system. Graduates are in demand across key skill sectors. Settlement pathways are clearly defined.',
+    avgTuition: 'AUD 22K–35K / year',
+    studyVisaFee: 'AUD 710',
+    workWhileStudy: '48 hrs/fortnight',
+    postStudyWork: '485 Visa 2–4 yrs',
+    prPathway: 'GSM (189/190), State Nom.',
+  },
+  {
+    id: 'germany',
+    name: 'Germany',
+    flag: '🇩🇪',
+    heroImage: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1200&h=600&fit=crop',
+    universities: 120,
+    students: 500,
+    description: 'Germany is a leading destination for affordable, high-quality education. It is especially strong in engineering, technology, and applied sciences. Public universities are highly subsidized. Programs emphasize practical training and industry collaboration. Germany has a strong economy and skill shortages. Many postgraduate programs are available in English. Students benefit from excellent infrastructure. Long-term career stability is a major advantage.',
+    avgTuition: 'EUR 3K–12K / year',
+    studyVisaFee: 'EUR 75',
+    workWhileStudy: '120 full / 240 half days',
+    postStudyWork: 'Job Search 18 months',
+    prPathway: 'EU Blue Card → PR',
   }
 ];
 
@@ -206,12 +146,12 @@ export default function DestinationsSection() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="py-16"
+          className="pt-6 pb-16"
         >
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-4">
               {/* Left Panel - Hero Image with Overlay Stats */}
-              <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden">
+              <div className="relative h-[350px] rounded-2xl overflow-hidden mt-12">
                 <Image 
                   src={selectedDestination.heroImage}
                   alt={selectedDestination.name}
@@ -238,30 +178,60 @@ export default function DestinationsSection() {
               </div>
 
               {/* Right Panel - Content */}
-              <div className="bg-white rounded-3xl p-2 flex flex-col">
-                {/* Introductory Text */}
-                <p className="text-base text-slate-600 leading-relaxed mb-2">
+              <div className="bg-white rounded-3xl pt-0 px-6 pb-6 flex flex-col space-y-5">
+                {/* Description */}
+                <p className="text-base text-slate-600 leading-relaxed">
                   {selectedDestination.description}
                 </p>
 
-                {/* Top Partner Universities */}
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Top Partner Universities</h3>
-                
-                {/* University List - Show first 3 */}
-                <div className="space-y-1 flex-1">
-                  {selectedDestination.topUniversities.slice(0, 3).map((uni, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center gap-2 p-2 bg-slate-50 rounded-xl hover:bg-purple-50 transition-colors"
-                    >
-                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="w-4 h-4 text-purple-600" />
-                      </div>
-                      <span className="text-slate-900 font-medium text-sm">{uni.name}</span>
+                {/* Key Info Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-xl border border-purple-100">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <DollarSign className="w-5 h-5 text-purple-600" />
                     </div>
-                  ))}
+                    <div>
+                      <p className="text-xs font-medium text-purple-600 uppercase tracking-wide">Avg Tuition</p>
+                      <p className="text-sm font-semibold text-slate-900">{selectedDestination.avgTuition}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-xl border border-purple-100">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <FileCheck className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-purple-600 uppercase tracking-wide">Study Visa Fee</p>
+                      <p className="text-sm font-semibold text-slate-900">{selectedDestination.studyVisaFee}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-xl border border-purple-100">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-purple-600 uppercase tracking-wide">Work While Study</p>
+                      <p className="text-sm font-semibold text-slate-900">{selectedDestination.workWhileStudy}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-xl border border-purple-100">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-purple-600 uppercase tracking-wide">Post-Study Work</p>
+                      <p className="text-sm font-semibold text-slate-900">{selectedDestination.postStudyWork}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-xl border border-purple-100 sm:col-span-2">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-purple-600 uppercase tracking-wide">PR Pathway</p>
+                      <p className="text-sm font-semibold text-slate-900">{selectedDestination.prPathway}</p>
+                    </div>
+                  </div>
                 </div>
-
               </div>
             </div>
           </div>

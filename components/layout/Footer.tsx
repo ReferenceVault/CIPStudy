@@ -40,15 +40,15 @@ export default function Footer() {
 
   const socialLinks = [
 
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/CIP.StudyAbroad', label: 'Facebook' },
 
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/cip.studyabroad/', label: 'Instagram' },
 
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Twitter, href: 'https://twitter.com/CipAbroad', label: 'Twitter' },
 
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/cipstudyabroad/', label: 'LinkedIn' },
 
-    { icon: Youtube, href: '#', label: 'YouTube' }
+    { icon: Youtube, href: 'https://www.youtube.com/@cipstuydabroad', label: 'YouTube' }
 
   ];
 
@@ -107,6 +107,10 @@ export default function Footer() {
                   key={index}
 
                   href={social.href}
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
 
                   className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:bg-purple-600 hover:text-white transition-colors"
 
