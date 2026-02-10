@@ -11,44 +11,72 @@ const locations = [
     flag: '🇮🇳',
     offices: [
       {
-        city: 'Hyderabad',
-        address: 'Ground Floor, Linus Building, 1-8-313, Near, Passport Office Rd, opp. US Consulate General, Patigadda, Begumpet, Hyderabad, Telangana, 500003',
-        phone: '+91 91334 33001',
-        color: 'from-purple-500 to-purple-600',
-        bgColor: 'bg-purple-50',
-        iconColor: 'text-purple-600'
-      },
-      {
         city: 'Ahmedabad',
-        address: 'T junction, 203, Shivalik Staymev, At Sardar Patel Ring Rd, Ambli, Ahmedabad, Gujarat, 380007',
-        phone: '+91 70758 33008',
+        address: '203, Shivalik Satymev, Nr Vakil Bridge, SP Ring Road, Ambli, Ahmedabad, 380058',
+        phone: '+91 7075833008',
         color: 'from-pink-500 to-pink-600',
         bgColor: 'bg-pink-50',
         iconColor: 'text-pink-600'
       },
       {
-        city: 'Ludhiana',
-        address: '272-A, Second Floor, Krishna Mandir Rd, Near Ishmeet Singh Chowk, Nehru Nagar, Model Town Extension Ludhiana, Punjab 141001',
-        phone: '+91 91542 54599',
-        color: 'from-cyan-500 to-blue-500',
-        bgColor: 'bg-cyan-50',
-        iconColor: 'text-cyan-600'
+        city: 'Hyderabad',
+        address: 'Ground Floor, Linus Building, 1-8-313, Near Passport Office Rd, Opp. US Consulate General, Patigadda, Begumpet, Hyderabad, Telangana 500003',
+        phone: '+91 9133433001',
+        color: 'from-purple-500 to-purple-600',
+        bgColor: 'bg-purple-50',
+        iconColor: 'text-purple-600'
       },
       {
         city: 'Kochi',
-        address: 'Opposite to Parthas 1st Floor, Kavitha Building, Mahatma Gandhi Rd, Jos Junction, Kochi, Kerala 682016',
-        phone: '+91 91334 33001',
+        address: 'Opposite to Parthas, 1st Floor, Kavitha Building, Mahatma Gandhi Rd, Jos Junction, Kochi, Kerala 682016',
+        phone: '+91 9133433003',
         color: 'from-purple-500 to-pink-600',
         bgColor: 'bg-purple-50',
         iconColor: 'text-purple-600'
       },
       {
+        city: 'Ludhiana',
+        address: 'Second Floor, 272-A, Krishna Mandir Rd, Near Ishmeet Singh Chowk, Nehru Nagar, Model Town Extension, Model Town, Ludhiana, Punjab 141001',
+        phone: '+91 9154254599',
+        color: 'from-cyan-500 to-blue-500',
+        bgColor: 'bg-cyan-50',
+        iconColor: 'text-cyan-600'
+      },
+      {
         city: 'Vijayawada',
-        address: 'Flat No : 301, Naga\'S Hafeez Plaza, D. No : 40-1-62, MG Rd, Gurunanak Nagar, K P Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520010',
-        phone: '+91 70759 33005',
+        address: 'Flat No: 301, Naga\'s Hafeez Plaza, D. No: 40-1-62, MG Rd, Gurunanak Nagar, K P Nagar, Benz Circle, Vijayawada, Andhra Pradesh 520010',
+        phone: '+91 7075933005',
         color: 'from-indigo-500 to-purple-500',
         bgColor: 'bg-indigo-50',
         iconColor: 'text-indigo-600'
+      }
+    ]
+  },
+  {
+    country: 'Nepal',
+    flag: '🇳🇵',
+    offices: [
+      {
+        city: 'Kathmandu',
+        address: 'M8VP+2FJ, Kathmandu 44600, Nepal',
+        phone: '+977 986-8818191',
+        color: 'from-red-500 to-rose-600',
+        bgColor: 'bg-red-50',
+        iconColor: 'text-red-600'
+      }
+    ]
+  },
+  {
+    country: 'Canada',
+    flag: '🇨🇦',
+    offices: [
+      {
+        city: 'Toronto',
+        address: '4789 Yonge Street, Suite 912, Toronto, ON, Canada, M2N 5M5',
+        phone: '+1 647-833-5257 or +1 647-321-5257',
+        color: 'from-rose-500 to-red-600',
+        bgColor: 'bg-rose-50',
+        iconColor: 'text-rose-600'
       }
     ]
   }
