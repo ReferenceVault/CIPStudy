@@ -27,91 +27,6 @@ const labelColors = [
 
 const labels = ['Latest', 'Update', 'Important', 'Good News', 'News', 'Announcement'];
 
-// Sample blogs for demonstration
-const sampleBlogs: BlogPost[] = [
-  {
-    _id: '1',
-    id: '1',
-    title: 'New Express Entry Draw Announced: 3,500 Invitations Issued',
-    description: 'IRCC has conducted a new Express Entry draw, issuing 3,500 invitations to apply for permanent residence. The minimum CRS score was 485 points. This is great news for candidates in the pool.',
-    thumbnail: '',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-  {
-    _id: '2',
-    id: '2',
-    title: 'Provincial Nominee Program Updates: Ontario Opens New Stream',
-    description: 'Ontario has announced a new stream under the Provincial Nominee Program targeting tech workers. This stream offers faster processing times and lower requirements for eligible candidates.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 86400000).toISOString(),
-    updatedAt: new Date(Date.now() - 86400000).toISOString(),
-  },
-  {
-    _id: '3',
-    id: '3',
-    title: 'Study Permit Processing Times Reduced for 2024',
-    description: 'IRCC has announced reduced processing times for study permit applications. Most applications are now processed within 4-6 weeks, down from the previous 8-12 weeks.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 172800000).toISOString(),
-    updatedAt: new Date(Date.now() - 172800000).toISOString(),
-  },
-  {
-    _id: '4',
-    id: '4',
-    title: 'New Work Permit Options for Spouses of International Students',
-    description: 'The government has expanded work permit eligibility for spouses of international students. This change allows more families to work while studying in Canada.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 259200000).toISOString(),
-    updatedAt: new Date(Date.now() - 259200000).toISOString(),
-  },
-  {
-    _id: '5',
-    id: '5',
-    title: 'Citizenship Application Fees Updated for 2024',
-    description: 'IRCC has updated citizenship application fees effective January 2024. The new fee structure applies to all applications submitted after the effective date.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 345600000).toISOString(),
-    updatedAt: new Date(Date.now() - 345600000).toISOString(),
-  },
-  {
-    _id: '6',
-    id: '6',
-    title: 'Family Sponsorship Processing Times Improve',
-    description: 'Processing times for family sponsorship applications have improved significantly. Spousal sponsorship applications are now processed in approximately 12 months.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 432000000).toISOString(),
-    updatedAt: new Date(Date.now() - 432000000).toISOString(),
-  },
-  {
-    _id: '7',
-    id: '7',
-    title: 'Quebec Immigration Program Updates: New Selection Criteria',
-    description: 'Quebec has updated its immigration selection criteria for skilled workers. The new system places greater emphasis on French language proficiency and work experience.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 518400000).toISOString(),
-    updatedAt: new Date(Date.now() - 518400000).toISOString(),
-  },
-  {
-    _id: '8',
-    id: '8',
-    title: 'Post-Graduation Work Permit Extension Program Launched',
-    description: 'A new program allows certain PGWP holders to extend their work permits for an additional 18 months. This provides more time to gain Canadian experience and apply for permanent residence.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 604800000).toISOString(),
-    updatedAt: new Date(Date.now() - 604800000).toISOString(),
-  },
-  {
-    _id: '9',
-    id: '9',
-    title: 'Rural and Northern Immigration Pilot Program Expands',
-    description: 'The RNIP program has expanded to include more communities across Canada. This program helps smaller communities attract and retain skilled workers.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 691200000).toISOString(),
-    updatedAt: new Date(Date.now() - 691200000).toISOString(),
-  },
-];
-
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -138,17 +53,15 @@ export default function BlogsPage() {
 
       const data = await response.json();
       const allBlogs = data.data?.blogs || [];
-      // Use sample blogs if no blogs are fetched, limit to 9
-      const blogsToShow = allBlogs.length > 0 ? allBlogs : sampleBlogs;
-      setBlogs(blogsToShow.slice(0, 9));
+      setBlogs(allBlogs.slice(0, 9));
     } catch (error) {
       console.error('Error fetching blogs:', error);
       // Check if it's a network error
       if (error instanceof TypeError && error.message.includes('fetch')) {
         console.error('Network error - Backend server may not be running or CORS issue');
       }
-      // Use sample blogs on error
-      setBlogs(sampleBlogs.slice(0, 9));
+      // Don't set any blogs on error - will show "No blog posts available yet"
+      setBlogs([]);
     } finally {
       setLoading(false);
     }

@@ -27,46 +27,6 @@ const labelColors = [
 
 const labels = ['Latest', 'Update', 'Important', 'Good News', 'News', 'Announcement'];
 
-// Sample blogs for demonstration
-const sampleBlogs: BlogPost[] = [
-  {
-    _id: '1',
-    id: '1',
-    title: 'New Express Entry Draw Announced: 3,500 Invitations Issued',
-    description: 'IRCC has conducted a new Express Entry draw, issuing 3,500 invitations to apply for permanent residence. The minimum CRS score was 485 points.',
-    thumbnail: '',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-  {
-    _id: '2',
-    id: '2',
-    title: 'Provincial Nominee Program Updates: Ontario Opens New Stream',
-    description: 'Ontario has announced a new stream under the Provincial Nominee Program targeting tech workers.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 86400000).toISOString(),
-    updatedAt: new Date(Date.now() - 86400000).toISOString(),
-  },
-  {
-    _id: '3',
-    id: '3',
-    title: 'Study Permit Processing Times Reduced for 2024',
-    description: 'IRCC has announced reduced processing times for study permit applications. Most applications are now processed within 4-6 weeks.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 172800000).toISOString(),
-    updatedAt: new Date(Date.now() - 172800000).toISOString(),
-  },
-  {
-    _id: '4',
-    id: '4',
-    title: 'New Work Permit Options for Spouses of International Students',
-    description: 'The government has expanded work permit eligibility for spouses of international students.',
-    thumbnail: '',
-    createdAt: new Date(Date.now() - 259200000).toISOString(),
-    updatedAt: new Date(Date.now() - 259200000).toISOString(),
-  },
-];
-
 export default function BlogSection() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -94,16 +54,15 @@ export default function BlogSection() {
 
       const data = await response.json();
       const fetchedBlogs = data.data?.blogs || [];
-      // Use sample blogs if no blogs are fetched
-      setBlogs(fetchedBlogs.length > 0 ? fetchedBlogs : sampleBlogs);
+      setBlogs(fetchedBlogs);
     } catch (error) {
       console.error('Error fetching blogs:', error);
       // Check if it's a network error
       if (error instanceof TypeError && error.message.includes('fetch')) {
         console.error('Network error - Backend server may not be running or CORS issue');
       }
-      // Use sample blogs on error
-      setBlogs(sampleBlogs);
+      // Don't set any blogs on error - will show "No blog posts available yet"
+      setBlogs([]);
     } finally {
       setLoading(false);
     }
