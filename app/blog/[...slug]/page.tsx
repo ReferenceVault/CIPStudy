@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -33,16 +33,7 @@ export default function BlogView() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (!blogId) {
-      setError('Invalid blog ID');
-      setLoading(false);
-      return;
-    }
-    fetchBlog();
-  }, [blogId]);
-
-  const fetchBlog = async () => {
+  const fetchBlog = useCallback(async () => {
     try {
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3002';
       if (!blogId) {
@@ -62,7 +53,16 @@ export default function BlogView() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [blogId]);
+
+  useEffect(() => {
+    if (!blogId) {
+      setError('Invalid blog ID');
+      setLoading(false);
+      return;
+    }
+    fetchBlog();
+  }, [blogId, fetchBlog]);
 
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
