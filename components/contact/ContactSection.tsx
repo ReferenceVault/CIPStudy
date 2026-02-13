@@ -73,10 +73,38 @@ const locations = [
       {
         city: 'Toronto',
         address: '4789 Yonge Street, Suite 912, Toronto, ON, Canada, M2N 5M5',
-        phone: '+1 647-833-5257 or +1 647-321-5257',
+        phone: '+1 (647) 559-9989 or +1 647-321-5257',
         color: 'from-rose-500 to-red-600',
         bgColor: 'bg-rose-50',
         iconColor: 'text-rose-600'
+      }
+    ]
+  },
+  {
+    country: 'Brazil',
+    flag: '🇧🇷',
+    offices: [
+      {
+        city: 'Belo Horizonte',
+        address: '1460 Alagoas Street, Room 705, Savassi - Belo Horizonte, MG, Brazil, 30130-160',
+        phone: '+55 31 9863-1959 or +55 31 8956-8893',
+        color: 'from-green-500 to-emerald-600',
+        bgColor: 'bg-emerald-50',
+        iconColor: 'text-emerald-600'
+      }
+    ]
+  },
+  {
+    country: 'Ukraine',
+    flag: '🇺🇦',
+    offices: [
+      {
+        city: 'Kiev',
+        address: '84 Artema Street, Office# 1, Kiev, Ukraine 04050',
+        phone: '+38 (044)484-09-58',
+        color: 'from-yellow-400 to-blue-500',
+        bgColor: 'bg-yellow-50',
+        iconColor: 'text-blue-600'
       }
     ]
   }

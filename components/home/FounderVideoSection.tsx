@@ -142,7 +142,7 @@ export default function FounderVideoSection() {
             <div className="flex items-center gap-3 mb-5 p-3 bg-white rounded-2xl shadow-lg">
 
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                src="/founder-photo.png"
                 alt="Dr. Gautham Kolluri"
                 width={48}
                 height={48}
