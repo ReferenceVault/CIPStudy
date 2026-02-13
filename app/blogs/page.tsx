@@ -211,7 +211,7 @@ export default function BlogsPage() {
                       
                       {/* Read More Link */}
                       <Link 
-                        href={`/blog/${blogId}`}
+                        href={`/blog?id=${blogId}`}
                         className="text-purple-600 font-medium hover:text-purple-700 transition inline-flex items-center gap-2"
                       >
                         Read More <ArrowRight size={16} />

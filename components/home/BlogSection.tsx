@@ -204,7 +204,7 @@ export default function BlogSection() {
                       
                       {/* Read More Link */}
                       <Link 
-                        href={`/blog/${blogId}`}
+                        href={`/blog?id=${blogId}`}
                         className="text-purple-600 font-medium hover:text-purple-700 transition inline-flex items-center gap-1 text-sm"
                       >
                         Read More <ArrowRight size={14} />

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'next/navigation';
+import { useState, useEffect, useCallback, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar } from 'lucide-react';
@@ -24,11 +24,9 @@ interface Blog {
   };
 }
 
-export default function BlogView() {
-  const params = useParams<{ slug?: string | string[] }>();
-  // Handle both array and string slug params
-  const slug = params?.slug;
-  const blogId = Array.isArray(slug) ? slug[0] : (typeof slug === 'string' ? slug : null);
+function BlogContent() {
+  const searchParams = useSearchParams();
+  const blogId = searchParams.get('id');
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -209,5 +207,17 @@ export default function BlogView() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BlogView() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-white pt-24">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
+      </div>
+    }>
+      <BlogContent />
+    </Suspense>
   );
 }
