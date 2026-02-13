@@ -250,7 +250,14 @@ export default function SocialMediaSection() {
       const response = await fetch(`${backendUrl}/api/media`);
       
       if (!response.ok) {
-        throw new Error('Failed to fetch media');
+        const errorText = await response.text();
+        console.error('API Error (Media):', {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorText,
+          url: `${backendUrl}/api/media`
+        });
+        throw new Error(`Failed to fetch media: ${response.status} ${response.statusText}`);
       }
 
       const data = await response.json();
@@ -306,6 +313,10 @@ export default function SocialMediaSection() {
       setYoutubeVideos(youtubeMedia.length > 0 ? youtubeMedia : sampleYouTubeVideos);
     } catch (error) {
       console.error('Error fetching social media posts:', error);
+      // Check if it's a network error
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('Network error - Backend server may not be running or CORS issue');
+      }
       // Use sample data on error
       setInstagramReels(sampleInstagramReels);
       setYoutubeVideos(sampleYouTubeVideos);

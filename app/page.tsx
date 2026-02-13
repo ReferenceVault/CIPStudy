@@ -20,6 +20,8 @@ import NewsSection from '@/components/home/NewsSection';
 
 import SocialMediaSection from '@/components/home/SocialMediaSection';
 
+import BlogSection from '@/components/home/BlogSection';
+
 import PartnersSection from '@/components/home/PartnersSection';
 
 import CTASection from '@/components/home/CTASection';
@@ -49,6 +51,8 @@ export default function Home() {
       <NewsSection />
 
       <SocialMediaSection />
+
+      <BlogSection />
 
       <TestimonialsSection />
 

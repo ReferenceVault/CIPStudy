@@ -60,7 +60,7 @@ export default function Header() {
 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
 
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90 backdrop-blur-sm'
 
       }`}
 
