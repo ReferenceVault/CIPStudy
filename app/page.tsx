@@ -16,8 +16,6 @@ import AboutSection from '@/components/home/AboutSection';
 
 import DestinationsSection from '@/components/home/DestinationsSection';
 
-import NewsSection from '@/components/home/NewsSection';
-
 import SocialMediaSection from '@/components/home/SocialMediaSection';
 
 import BlogSection from '@/components/home/BlogSection';
@@ -47,8 +45,6 @@ export default function Home() {
       <FounderVideoSection />
 
       <DestinationsSection />
-
-      <NewsSection />
 
       <SocialMediaSection />
 
